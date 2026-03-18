@@ -14,7 +14,9 @@ import { Enojo } from './paginas/emociones/enojo/enojo';
 
 
 export const routes: Routes = [
-    { path: '', component: Principal },
+  { path: '', component: Principal },
+  //{ path: '', redirectTo: 'emociones/calma', pathMatch: 'full' },
+  //{ path: '', component: Principal },
   { path: 'nosotros', component: Nosotros },
 
   { path: 'emociones/nostalgia', component: Nostalgia },

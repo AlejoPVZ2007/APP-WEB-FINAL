@@ -11,13 +11,14 @@ import { Confianza } from './paginas/emociones/confianza/confianza';
 import { Tristeza } from './paginas/emociones/tristeza/tristeza';
 import { Miedo } from './paginas/emociones/miedo/miedo';
 import { Enojo } from './paginas/emociones/enojo/enojo';
+import { Alegria } from './paginas/emociones/alegria/alegria';
 
 
 export const routes: Routes = [
   { path: '', component: Principal },
   //{ path: '', redirectTo: 'emociones/calma', pathMatch: 'full' },
   { path: 'nosotros', component: Nosotros },
-
+  { path: 'emociones/alegria', component: Alegria }, // Reemplaza con el componente correcto
   { path: 'emociones/nostalgia', component: Nostalgia },
   { path: 'emociones/calma', component: Calma },
   { path: 'emociones/amor', component: Amor },

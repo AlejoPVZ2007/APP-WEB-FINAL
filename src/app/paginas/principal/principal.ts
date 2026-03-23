@@ -25,7 +25,7 @@ interface Emocion {
 })
 export class Principal {
   emociones: Emocion[] = [
-    { id: 1, titulo: 'Alegría', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
+    { id: 1, titulo: 'Alegria', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
     { id: 2, titulo: 'Tristeza', emoji: '😢', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Tristeza', texto: 'Un espacio para reconocer lo que duele.', detalle: 'La tristeza invita a reflexionar...' },
     { id: 3, titulo: 'Nostalgia', emoji: '🌅', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Nostalgia', texto: 'Un viaje al pasado que nos conecta con recuerdos.', detalle: 'La nostalgia es un sentimiento agridulce...' },
     { id: 4, titulo: 'Miedo', emoji: '😨', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Miedo', texto: 'Una señal que nos protege y prepara.', detalle: 'El miedo es de protección evolutiva...' },

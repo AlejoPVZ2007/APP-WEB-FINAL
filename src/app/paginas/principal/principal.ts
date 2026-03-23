@@ -25,11 +25,11 @@ interface Emocion {
 })
 export class Principal {
   emociones: Emocion[] = [
-    { id: 1, titulo: 'Alegría', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
-    { id: 2, titulo: 'Tristeza', emoji: '😢', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Tristeza', texto: 'Un espacio para reconocer lo que duele.', detalle: 'La tristeza invita a reflexionar...' },
+    { id: 1, titulo: 'Alegria', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
+    { id: 2, titulo: 'Tristeza', emoji: '😢', imagen: 'assets/images/tristeza3.jpg', alt: 'Emoción Tristeza', texto: 'Un espacio para reconocer lo que duele.', detalle: 'La tristeza invita a reflexionar...' },
     { id: 3, titulo: 'Nostalgia', emoji: '🌅', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Nostalgia', texto: 'Un viaje al pasado que nos conecta con recuerdos.', detalle: 'La nostalgia es un sentimiento agridulce...' },
     { id: 4, titulo: 'Miedo', emoji: '😨', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Miedo', texto: 'Una señal que nos protege y prepara.', detalle: 'El miedo es de protección evolutiva...' },
-    { id: 5, titulo: 'Ira', emoji: '😠', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Ira', texto: 'Energía intensa que nos impulsa a cuestionar.', detalle: 'La ira surge ante injusticias...' },
+    { id: 5, titulo: 'Ira', emoji: '😠', imagen: 'assets/images/ira1.jpg', alt: 'Emoción Ira', texto: 'Energía intensa que nos impulsa a cuestionar.', detalle: 'La ira surge ante injusticias...' },
     { id: 6, titulo: 'Sorpresa', emoji: '😲', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Sorpresa', texto: 'Un momento inesperado que despierta curiosidad.', detalle: 'La sorpresa es neutral...' },
     { id: 7, titulo: 'Calma', emoji: '😌', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Calma', texto: 'Un respiro que ayuda a ordenar pensamientos.', detalle: 'La calma permite claridad...' },
     { id: 8, titulo: 'Amor', emoji: '🥰', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Amor', texto: 'La fuerza que nos conecta y nos invita a cuidar.', detalle: 'El amor fortalece vínculos...' },

@@ -1,16 +1,5 @@
-<<<<<<< HEAD
+
 import { Component, OnInit } from '@angular/core';
-=======
-
-
-
-
-
-
-
-
-import { Component } from '@angular/core';
->>>>>>> 34c5673cd6c9d608b5bb1e4a3aa85940eee5834f
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -77,7 +66,7 @@ export class Principal implements OnInit {
       id: 4,
       titulo: 'Miedo',
       emoji: '😨',
-      imagen: 'assets/images/Miedo.jpg',
+      imagen: 'assets/images/Miedo1.jpg',
       alt: 'Emoción Miedo',
       texto: 'Una señal que nos protege y prepara.',
       detalle: 'El miedo tiene una función evolutiva de protección. Nos alerta ante peligros reales o percibidos y activa nuestra respuesta de lucha o huida.',

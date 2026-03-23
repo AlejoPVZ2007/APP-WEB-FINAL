@@ -1,1 +1,32 @@
-<p>confianza works!</p>
+
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h1>¿Te sientes desconfiado?</h1>
+    <p>Compártenos lo que sientes hoy</p>
+  </div>
+
+  <!-- Formulario -->
+  <div class="form-box">
+    <form (ngSubmit)="publicar()">
+      <div>
+        <textarea
+          [(ngModel)]="mensaje"
+          name="mensaje"
+          placeholder="Escribe lo que sientes…">
+        </textarea>
+      </div>
+      <button type="submit">Publicar</button>
+    </form>
+  </div>
+
+  <!-- Comentarios dinámicos -->
+  <h4 class="mb-3">Comentarios recientes</h4>
+
+  <div *ngFor="let c of comentarios" class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h6 class="fw-bold">{{c.usuario}}</h6>
+      <p>{{c.texto}}</p>
+      <small class="text-muted">{{c.tiempo}}</small>
+    </div>
+  </div>
+</div>

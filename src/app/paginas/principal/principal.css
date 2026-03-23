@@ -151,3 +151,53 @@
   }
 
 }
+/* ===================================================
+   Estilos para los botones en el modal "Ir a la página" y "Cerrar"
+=================================================== */
+
+.modal-footer-custom {
+  display: flex;
+  justify-content: space-between;  /* Separar los botones de manera horizontal */
+  gap: 10px;  /* Espaciado entre los botones */
+}
+
+.modal-footer-custom .btn {
+  flex: 1;  /* Ambos botones ocupan el mismo tamaño */
+  font-size: 1rem;  /* Mismo tamaño de fuente */
+  padding: 10px 20px;  /* Mismo espaciado interno para ambos botones */
+  border-radius: 6px;  /* Bordes redondeados */
+  font-weight: 600;  /* Texto en negrita */
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Transiciones */
+}
+
+/* Estilo para el botón "Ir a la página" */
+.modal-footer-custom .btn-modal-close {
+  background-color: #f15a24;  /* Fondo naranja */
+  color: #fff;  /* Texto blanco */
+  border: none;  /* Sin borde */
+}
+
+/* Estilo para el botón "Cerrar" */
+.modal-footer-custom .btn-secondary {
+  background-color: #6c757d;  /* Color gris claro */
+  color: #fff;  /* Texto blanco */
+  border: none;  /* Sin borde */
+}
+
+/* Efecto hover para el botón "Ir a la página" */
+.modal-footer-custom .btn-modal-close:hover {
+  background-color: #e94e1b;  /* Un tono más oscuro de naranja */
+  transform: translateY(-3px);  /* Efecto de elevación */
+}
+
+/* Efecto hover para el botón "Cerrar" */
+.modal-footer-custom .btn-secondary:hover {
+  background-color: #5a6268;  /* Tono más oscuro de gris */
+  transform: translateY(-3px);  /* Efecto de elevación */
+}
+
+/* Efecto de foco en los botones */
+.modal-footer-custom .btn:focus {
+  outline: none;  /* Sin borde azul por defecto del navegador */
+  box-shadow: 0 0 0 4px rgba(241, 90, 36, 0.4);  /* Sombra suave para el foco */
+}

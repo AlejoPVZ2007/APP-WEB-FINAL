@@ -9,6 +9,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';  // Importa Router
 
 // Declaramos Bootstrap JS global para usar modales
 declare var bootstrap: any;
@@ -32,7 +33,7 @@ interface Emocion {
 })
 export class Principal {
   emociones: Emocion[] = [
-    { id: 1, titulo: 'Alegría', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
+    { id: 1, titulo: 'Alegria', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
     { id: 2, titulo: 'Tristeza', emoji: '😢', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Tristeza', texto: 'Un espacio para reconocer lo que duele.', detalle: 'La tristeza invita a reflexionar...' },
     { id: 3, titulo: 'Nostalgia', emoji: '🌅', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Nostalgia', texto: 'Un viaje al pasado que nos conecta con recuerdos.', detalle: 'La nostalgia es un sentimiento agridulce...' },
     { id: 4, titulo: 'Miedo', emoji: '😨', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Miedo', texto: 'Una señal que nos protege y prepara.', detalle: 'El miedo es de protección evolutiva...' },
@@ -65,6 +66,8 @@ export class Principal {
   // Modal
   emocionSeleccionada: Emocion | null = null;
 
+  constructor(private router: Router) {}  // Inyecta Router
+
   abrirModal(em: Emocion) {
     this.emocionSeleccionada = em;
 
@@ -72,6 +75,20 @@ export class Principal {
     if (modalEl) {
       const modal = new bootstrap.Modal(modalEl);
       modal.show();
+    }
+  }
+  redirigirPagina() {
+    // Cerrar el modal antes de redirigir
+    const modalEl = document.getElementById('emocionModal');
+    if (modalEl) {
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      modal.hide();  // Cierra el modal
+    }
+    if (this.emocionSeleccionada) {
+      const emocionTitulo = this.emocionSeleccionada.titulo.toLowerCase();
+      this.router.navigate([`/emociones/${emocionTitulo}`]);
+    } else {
+      console.log('No se ha seleccionado ninguna emoción');
     }
   }
 }

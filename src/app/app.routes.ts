@@ -14,14 +14,14 @@ import { Miedo } from './paginas/emociones/miedo/miedo';
 import { Enojo } from './paginas/emociones/enojo/enojo';
 
 
+
 export const routes: Routes = [
   { path: '', component: Principal },
   //{ path: '', redirectTo: 'emociones/calma', pathMatch: 'full' },
-  //{ path: '', component: Principal },
-  { path: 'nosotros', component: Nosotros },
 
-  
+  { path: 'nosotros', component: Nosotros },
   { path: 'emociones/alegria', component: Alegria },
+  { path: 'emociones/alegria', component: Alegria }, // Reemplaza con el componente correcto
   { path: 'emociones/nostalgia', component: Nostalgia },
   { path: 'emociones/calma', component: Calma },
   { path: 'emociones/amor', component: Amor },

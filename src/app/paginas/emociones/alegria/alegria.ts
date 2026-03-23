@@ -26,17 +26,27 @@ export class Alegria implements AfterViewInit, OnDestroy {
   mensaje: string = '';
 
   comentarios = [
-    { usuario: 'Usuario123', texto: 'Hoy tuve un día maravilloso! 🌟', tiempo: 'Hace 2 minutos' },
+    { usuario: 'jamilet', texto: 'Hoy tuve un día maravilloso! 🌟', tiempo: 'Hace 2 minutos' },
     { usuario: 'Ana', texto: 'Me encantó el evento de ayer! 🎉', tiempo: 'Hace 10 minutos' }
   ];
 
   frases = [
-    "La alegría es una emoción, no una debilidad.",
-    "Sentir alegría es humano, compartirlo es bondad.",
-    "La alegría se multiplica cuando se comparte.",
-    "La alegría es contagiosa, compártela.",
-    "Hoy es un día para celebrar."
+    'La alegría es una emoción poderosa que transforma todo a su alrededor. Cuando la sientes, compártela: se multiplica al darse a los demás.',
+    'Celebrar los pequeños momentos es una forma de gratitud. La alegría no siempre llega en grandes eventos, vive en los detalles del día a día.',
+    'La alegría compartida es doble alegría. Busca a alguien hoy y cuéntale algo que te haya hecho sonreír.',
+    'La alegría es contagiosa, compártela sin miedo. Una sonrisa tuya puede cambiar el día de alguien que lo necesita.',
+    'Hoy es un día para celebrar estar vivo. La alegría más pura nace de agradecer lo que tienes exactamente en este momento.'
   ];
+
+  fraseSeleccionada: string = '';
+
+  abrirFrase(frase: string) {
+    this.fraseSeleccionada = frase;
+  }
+
+  cerrarFrase() {
+    this.fraseSeleccionada = '';
+  }
 
   elementos: any[] = [];
   numElementos = 40;

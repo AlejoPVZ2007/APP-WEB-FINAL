@@ -37,8 +37,8 @@ fraseSeleccionada: string = '';
   mensaje: string = '';
 
   comentarios = [
-    { usuario: 'Usuario123', texto: 'Hoy alguien me siguió 😰', tiempo: 'Hace 2 minutos' },
-    { usuario: 'Ana', texto: 'Tengo pesadillas no puedo dormir 😨', tiempo: 'Hace 10 minutos' }
+    { usuario: 'Jimy', texto: 'Hoy alguien me siguió 😰', tiempo: 'Hace 2 minutos' },
+    { usuario: 'Sven', texto: 'Tengo pesadillas no puedo dormir 😨', tiempo: 'Hace 10 minutos' }
   ];
 
  frases = [

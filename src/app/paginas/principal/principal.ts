@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';  // Importa Router
+import { FormsModule } from '@angular/forms';
 
-// Declaramos Bootstrap JS global para usar modales
 declare var bootstrap: any;
 
 interface Emocion {
@@ -14,73 +13,198 @@ interface Emocion {
   alt: string;
   texto: string;
   detalle: string;
+  tags?: string[];
+  ruta: string;
 }
 
 @Component({
   selector: 'app-principal',
-  standalone: true,                 // Componente standalone
-  imports: [CommonModule, RouterModule], // Necesario para *ngFor y routerLink
+  standalone: true,
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './principal.html',
   styleUrls: ['./principal.css']
 })
-export class Principal {
+export class Principal implements OnInit {
+
+  /* ── Datos ── */
   emociones: Emocion[] = [
-    { id: 1, titulo: 'Alegria', emoji: '😄', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Alegría', texto: 'Una chispa que nos impulsa a compartir y celebrar.', detalle: 'La alegría es positiva...' },
-    { id: 2, titulo: 'Tristeza', emoji: '😢', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Tristeza', texto: 'Un espacio para reconocer lo que duele.', detalle: 'La tristeza invita a reflexionar...' },
-    { id: 3, titulo: 'Nostalgia', emoji: '🌅', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Nostalgia', texto: 'Un viaje al pasado que nos conecta con recuerdos.', detalle: 'La nostalgia es un sentimiento agridulce...' },
-    { id: 4, titulo: 'Miedo', emoji: '😨', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Miedo', texto: 'Una señal que nos protege y prepara.', detalle: 'El miedo es de protección evolutiva...' },
-    { id: 5, titulo: 'Ira', emoji: '😠', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Ira', texto: 'Energía intensa que nos impulsa a cuestionar.', detalle: 'La ira surge ante injusticias...' },
-    { id: 6, titulo: 'Sorpresa', emoji: '😲', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Sorpresa', texto: 'Un momento inesperado que despierta curiosidad.', detalle: 'La sorpresa es neutral...' },
-    { id: 7, titulo: 'Calma', emoji: '😌', imagen: 'assets/images/Foto1.jpg', alt: 'Emoción Calma', texto: 'Un respiro que ayuda a ordenar pensamientos.', detalle: 'La calma permite claridad...' },
-    { id: 8, titulo: 'Amor', emoji: '🥰', imagen: 'assets/images/Nostalgia1.jpeg', alt: 'Emoción Amor', texto: 'La fuerza que nos conecta y nos invita a cuidar.', detalle: 'El amor fortalece vínculos...' },
-    { id: 9, titulo: 'Confianza', emoji: '🦁', imagen: 'assets/images/Miedo1.jpg', alt: 'Emoción Confianza', texto: 'Seguridad interior que permite avanzar.', detalle: 'La confianza nace del autoconocimiento...' }
+    {
+      id: 1,
+      titulo: 'Alegría',
+      emoji: '😄',
+      imagen: 'assets/images/Alegria.jpg',
+      alt: 'Emoción Alegría',
+      texto: 'Una chispa que nos impulsa a compartir y celebrar.',
+      detalle: 'La alegría es una emoción positiva que surge cuando algo va bien o supera nuestras expectativas. Nos motiva a conectarnos con otros y refuerza conductas beneficiosas.',
+      tags: ['Positiva', 'Social', 'Energía'],
+      ruta: 'alegria'
+    },
+    {
+      id: 2,
+      titulo: 'Tristeza',
+      emoji: '😢',
+      imagen: 'assets/images/Tristeza.jpg',
+      alt: 'Emoción Tristeza',
+      texto: 'Un espacio para reconocer lo que duele.',
+      detalle: 'La tristeza nos invita a reflexionar sobre lo que valoramos. Es una emoción necesaria que permite procesar pérdidas y encontrar nuevos significados.',
+      tags: ['Reflexiva', 'Introspectiva', 'Natural'],
+      ruta: 'tristeza'
+    },
+    {
+      id: 3,
+      titulo: 'Nostalgia',
+      emoji: '🌅',
+      imagen: 'assets/images/Nostalgia.jpg',
+      alt: 'Emoción Nostalgia',
+      texto: 'Un viaje al pasado que nos conecta con recuerdos.',
+      detalle: 'La nostalgia es un sentimiento agridulce que mezcla la alegría del recuerdo con la melancolía de lo que ya no está. Fortalece nuestra identidad.',
+      tags: ['Agridulce', 'Memoria', 'Identidad'],
+      ruta: 'nostalgia'
+    },
+    {
+      id: 4,
+      titulo: 'Miedo',
+      emoji: '😨',
+      imagen: 'assets/images/Miedo.jpg',
+      alt: 'Emoción Miedo',
+      texto: 'Una señal que nos protege y prepara.',
+      detalle: 'El miedo tiene una función evolutiva de protección. Nos alerta ante peligros reales o percibidos y activa nuestra respuesta de lucha o huida.',
+      tags: ['Protectora', 'Instintiva', 'Alerta'],
+      ruta: 'miedo'
+    },
+    {
+      id: 5,
+      titulo: 'Ira',
+      emoji: '😠',
+      imagen: 'assets/images/Ira.jpg',
+      alt: 'Emoción Ira',
+      texto: 'Energía intensa que nos impulsa a cuestionar.',
+      detalle: 'La ira surge ante situaciones que percibimos como injustas o amenazantes. Bien canalizada puede ser un motor de cambio y establecimiento de límites.',
+      tags: ['Intensa', 'Límites', 'Cambio'],
+      ruta: 'ira'
+    },
+    {
+      id: 6,
+      titulo: 'Sorpresa',
+      emoji: '😲',
+      imagen: 'assets/images/Sorpresa.jpg',
+      alt: 'Emoción Sorpresa',
+      texto: 'Un momento inesperado que despierta curiosidad.',
+      detalle: 'La sorpresa es una emoción neutral y breve que orienta nuestra atención hacia algo inesperado. Puede derivar en alegría, miedo u otras emociones según el contexto.',
+      tags: ['Neutra', 'Curiosidad', 'Atención'],
+      ruta: 'sorpresa'
+    },
+    {
+      id: 7,
+      titulo: 'Calma',
+      emoji: '😌',
+      imagen: 'assets/images/Calma.jpg',
+      alt: 'Emoción Calma',
+      texto: 'Un respiro que ayuda a ordenar pensamientos.',
+      detalle: 'La calma permite claridad mental y toma de decisiones conscientes. Es el estado ideal para reflexionar, crear y conectar con uno mismo.',
+      tags: ['Equilibrio', 'Claridad', 'Bienestar'],
+      ruta: 'calma'
+    },
+    {
+      id: 8,
+      titulo: 'Amor',
+      emoji: '🥰',
+      imagen: 'assets/images/Amor.jpeg',
+      alt: 'Emoción Amor',
+      texto: 'La fuerza que nos conecta y nos invita a cuidar.',
+      detalle: 'El amor fortalece vínculos y nos motiva a cuidar a otros y a nosotros mismos. Es una de las emociones más complejas y transformadoras.',
+      tags: ['Vínculo', 'Cuidado', 'Conexión'],
+      ruta: 'amor'
+    },
+    {
+      id: 9,
+      titulo: 'Confianza',
+      emoji: '🦁',
+      imagen: 'assets/images/Confianza.png',
+      alt: 'Emoción Confianza',
+      texto: 'Seguridad interior que permite avanzar.',
+      detalle: 'La confianza nace del autoconocimiento y las experiencias pasadas exitosas. Nos permite enfrentar desafíos con mayor resiliencia y apertura.',
+      tags: ['Seguridad', 'Resiliencia', 'Crecimiento'],
+      ruta: 'confianza'
+    },
   ];
 
-  // Paginación
+  /* ── Búsqueda ── */
+  textoBusqueda = '';
+  emocionesFiltradas: Emocion[] = [];
+
+  /* ── Paginación ── */
   paginaActual = 1;
-  cardsPorPagina = 3;
+  readonly cardsPorPagina = 3;
 
-  get totalPaginas() {
-    return Math.ceil(this.emociones.length / this.cardsPorPagina);
+  /* ── Modal ── */
+  emocionSeleccionada: Emocion | null = null;
+  private modalRef: any = null;
+
+  /* ── Ciclo de vida ── */
+  ngOnInit(): void {
+    this.emocionesFiltradas = [...this.emociones];
+    this._bindModal();
   }
 
-  get emocionesPaginadas() {
-    const start = (this.paginaActual - 1) * this.cardsPorPagina;
-    return this.emociones.slice(start, start + this.cardsPorPagina);
+  /* ── Getters ── */
+  get totalPaginas(): number {
+    return Math.ceil(this.emocionesFiltradas.length / this.cardsPorPagina);
+  }
+  get emocionesPaginadas(): Emocion[] {
+    const s = (this.paginaActual - 1) * this.cardsPorPagina;
+    return this.emocionesFiltradas.slice(s, s + this.cardsPorPagina);
+  }
+  get paginasArray(): unknown[] { return Array(this.totalPaginas); }
+
+  /* ── Búsqueda ── */
+  filtrarEmociones(): void {
+    const q = this.textoBusqueda.toLowerCase().trim();
+    this.emocionesFiltradas = q
+      ? this.emociones.filter(e =>
+          e.titulo.toLowerCase().includes(q) ||
+          e.texto.toLowerCase().includes(q) ||
+          e.tags?.some(t => t.toLowerCase().includes(q)))
+      : [...this.emociones];
+    this.paginaActual = 1;
   }
 
-  cambiarPagina(nueva: number) {
-    if (nueva < 1 || nueva > this.totalPaginas) return;
-    this.paginaActual = nueva;
+  /* ── Paginación ── */
+  cambiarPagina(n: number): void {
+    if (n < 1 || n > this.totalPaginas) return;
+    this.paginaActual = n;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Modal
-  emocionSeleccionada: Emocion | null = null;
-
-  constructor(private router: Router) {}  // Inyecta Router
-
-  abrirModal(em: Emocion) {
+  /* ── Modal ── */
+  abrirModal(em: Emocion): void {
     this.emocionSeleccionada = em;
 
-    const modalEl = document.getElementById('emocionModal');
-    if (modalEl) {
-      const modal = new bootstrap.Modal(modalEl);
-      modal.show();
+    const el = document.getElementById('emocionModal');
+    if (!el) return;
+
+    if (this.modalRef) {
+      this.modalRef.dispose();
+      this.modalRef = null;
     }
+
+    setTimeout(() => {
+      this.modalRef = new bootstrap.Modal(el, {
+        backdrop: true,
+        keyboard: true
+      });
+      this.modalRef.show();
+    }, 0);
   }
-  redirigirPagina() {
-    // Cerrar el modal antes de redirigir
-    const modalEl = document.getElementById('emocionModal');
-    if (modalEl) {
-      const modal = bootstrap.Modal.getInstance(modalEl);
-      modal.hide();  // Cierra el modal
-    }
-    if (this.emocionSeleccionada) {
-      const emocionTitulo = this.emocionSeleccionada.titulo.toLowerCase();
-      this.router.navigate([`/emociones/${emocionTitulo}`]);
-    } else {
-      console.log('No se ha seleccionado ninguna emoción');
-    }
+
+  private _bindModal(): void {
+    document.getElementById('emocionModal')
+      ?.addEventListener('hidden.bs.modal', () => {
+        this.emocionSeleccionada = null;
+        if (this.modalRef) {
+          this.modalRef.dispose();
+          this.modalRef = null;
+        }
+      });
   }
 }

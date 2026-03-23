@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-enojo',
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './enojo.html',
-  styleUrl: './enojo.css',
+  styleUrls: ['./enojo.css'],
 })
 export class Enojo {}

@@ -29,5 +29,6 @@ export const routes: Routes = [
   { path: 'emociones/confianza', component: Confianza },
   { path: 'emociones/tristeza', component: Tristeza },
   { path: 'emociones/miedo', component: Miedo },
-  { path: 'emociones/ira', component: Enojo }
+  { path: 'emociones/ira', component: Enojo },
+  { path: 'emociones/alegria', component: Alegria },
 ];

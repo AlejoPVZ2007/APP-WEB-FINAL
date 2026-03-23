@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css DE ALEGRIA */
+body {
+    margin: 0;
+}
+
+body.pagina-alegria {
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("/assets/images/Alegria.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* styles.css DE MIEDO */
+body {
+    margin: 0;
+}
+
+body.pagina-miedo {
+    background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ),
+    url("/assets/images/miedo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+
+
+
+
+
+

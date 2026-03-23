@@ -1,1 +1,59 @@
-<p>miedo works!</p>
+<canvas #canvasLluvia id="lluvia"></canvas>
+
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h1>¿Tienes miedo?</h1>
+    <p>Compártenos lo que sientes hoy</p>
+  </div>
+
+  <!-- FORMULARIO -->
+  <div class="card mb-4 shadow">
+    <div class="card-body">
+      <form (submit)="publicar($event)">
+        <textarea class="form-control" 
+          [(ngModel)]="mensaje"
+          name="mensaje"
+          placeholder="Escribe lo que sientes… no estás solo"></textarea>
+        <button class="btn btn-warning mt-2">Publicar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- COMENTARIOS -->
+  <h4 class="mb-3">Comentarios recientes</h4>
+  <div *ngFor="let c of comentarios" class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h6 class="fw-bold">{{c.usuario}}</h6>
+      <p>{{c.texto}}</p>
+      <small class="text-muted">{{c.tiempo}}</small>
+    </div>
+  </div>
+</div>
+
+<!-- FRASES -->
+<div class="container my-4">
+  <h4 class="text-center mb-4">Frases del Día</h4>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4" *ngFor="let f of frases">
+      <div class="card frase-card shadow" (click)="abrirFrase(f)" style="cursor:pointer;">
+        <div class="card-body text-center">
+          <span class="frase-icon">👻</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" *ngIf="fraseSeleccionada" (click)="cerrarFrase()">
+  <div class="modal-frase" (click)="$event.stopPropagation()">
+    <span class="modal-icon">👻</span>
+    <p>{{fraseSeleccionada}}</p>
+    <button class="btn btn-warning mt-3" (click)="cerrarFrase()">Cerrar</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio #audioFondo loop>
+  <source src="assets/audio/fondo_miedo.mp3" type="audio/mpeg">
+</audio>

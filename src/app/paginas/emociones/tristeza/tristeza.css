@@ -1,0 +1,214 @@
+/* ===================================================
+   Cuerpo de la página "Tristeza" con imagen de fondo
+=================================================== */
+body {
+  background-color: #ee0606; /* Fondo claro */
+  margin: 0;
+  padding: 0;
+}
+
+#textoInicio{
+  color: black;
+  background-color: #0db1e7a9;
+}
+.tristeza-body {
+  background-color: #0db1e7; /* Fondo azul claro (Tristeza) */
+  min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+  padding: 20px;
+}
+
+.tristeza-body {
+  background-image: url('/assets/images/tristeza2.jpg');  /* Ruta a la imagen de fondo */
+  background-size: cover;  /* La imagen cubre toda el área */
+  background-position: center;  /* Centra la imagen */
+  min-height: 100vh;  /* Asegura que ocupe toda la altura de la pantalla */
+  padding: 50px 0;  /* Espaciado para que el contenido no esté pegado al borde */
+  color: #fff;  /* Texto blanco para que contraste con el fondo */
+}
+
+.tristeza-body .container {
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  
+}
+
+
+h1 {
+  color: #313131; /* Color blanco para el título */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+h2 {
+  color: #313131;
+}
+.lead {
+  font-size: 1.25rem;
+  color: #f1f1f1;
+  margin-bottom: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Estilos para las imágenes */
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Espaciado y tamaño para los párrafos */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Ajuste del tamaño del título en pantallas pequeñas */
+  }
+
+  .lead {
+    font-size: 1.1rem; /* Ajuste del tamaño del texto en pantallas pequeñas */
+  }
+}
+
+/* Formulario */
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-textarea {
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 6px 12px; /* Reduce el padding lateral */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.custom-button {
+  background-color: #f15a24; /* Naranja */
+  color: white;
+  font-weight: bold;
+  padding: 8px 15px; /* Reduce el padding lateral */
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #e94e1b; /* Naranja más oscuro */
+}
+
+/* Aseguramos que el textarea y los botones sean interactivos */
+textarea, button {
+  pointer-events: auto;  /* Asegura que el texto y los botones sean interactivos */
+  z-index: 10;           /* Asegura que no haya elementos que los tapen */
+}
+
+textarea {
+  resize: vertical;      /* Permite cambiar el tamaño verticalmente si se desea */
+  min-height: 120px;      /* Asegura que el textarea tenga un tamaño mínimo visible */
+  padding: 10px;          /* Espaciado interno para que el texto no se quede pegado a los bordes */
+}
+
+/* Aseguramos que las tarjetas tengan el fondo adecuado y el espacio correcto */
+.card {
+  padding: 15px;
+  position: relative; /* Asegura que las tarjetas no se solapen con otros elementos */
+  z-index: 1;         /* Configura el z-index para que no se solape con otros elementos */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #f15a24; /* Naranja */
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Para que el botón no esté pegado al formulario */
+}
+
+button:hover {
+  background-color: #e94e1b; /* Naranja más oscuro */
+}
+
+/*COMENTARIOS*/
+.card {
+  background-color: rgb(255, 255, 255);  /* Fondo blanco */
+  border: 1px solid #ccc;  /* Borde suave */
+}
+
+.card-body {
+  padding: 15px; /* Ajusta el padding si es necesario */
+  color: rgb(49, 42, 39);
+}
+
+.card.mb-3 {
+  margin-bottom: 1.5rem;  /* Asegura que las tarjetas tengan un margen adecuado */
+}
+
+/*frases*/
+/* Ajustes visuales */
+#fondofrases {
+  background-color: #0db1e78e;
+  background-size: cover;           /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center;      /* Centra la imagen dentro del contenedor */
+  background-repeat: no-repeat;     /* Evita que la imagen se repita */
+  padding: 30px 0;                  /* Añadir padding superior e inferior */
+  border-radius: 10px;              /* Bordes redondeados */
+}
+
+#frases .card {
+  background-color: #f8f9fa; /* Fondo claro */
+  border: 1px solid #ddd;     /* Borde suave */
+  padding: 15px;               /* Padding ajustado */
+}
+
+#frases .card-body {
+  padding: 15px;               /* Reduce el padding interior */
+}
+
+#frases h4 {
+  font-size: 1.75rem;          /* Tamaño más grande para el título */
+  font-weight: bold;           /* Hacerlo más destacado */
+}
+
+#frases .row {
+  margin-top: 2rem;            /* Espaciado superior entre las tarjetas */
+}
+
+.card-text {
+  font-size: 1rem;             /* Tamaño del texto */
+  font-style: italic;          /* Estilo de fuente en cursiva */
+}
+
+/* cards frases de apoyo*/
+#card1 {
+  width: 100%;                  /* ocupa todo el ancho de la columna */
+  min-height: 300px;            /* altura más grande */
+  border: 2px solid #007bff;    /* borde azul */
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  background-color: #f8f9fa;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+#card1:hover {
+  transform: translateY(-5px);
+}
+
+#card1 .card-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}

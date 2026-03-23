@@ -199,12 +199,11 @@ MODAL EMOCIÓN
 
 
       <div class="modal-footer">
-
-        <button class="btn btn-secondary"
-                data-bs-dismiss="modal">
-                Cerrar
-        </button>
-
+        <!-- Botón para redirigir a la página de la emoción -->
+        <div class="modal-footer-custom">
+          <button type="button" class="btn-modal-close" (click)="redirigirPagina()">Ir a la página</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
 
     </div>

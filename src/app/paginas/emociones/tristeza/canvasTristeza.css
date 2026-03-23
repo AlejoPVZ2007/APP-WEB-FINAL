@@ -1,0 +1,16 @@
+.canvas-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;  /* Coloca el canvas detrás del contenido */
+  background-color: none;  /* Fondo blanco para la animación de lluvia */
+}
+
+/* Estilo para el body o contenedor principal */
+.tristeza-body {
+  position: relative;   /* Necesario para que el canvas quede en el fondo */
+  min-height: 100vh;    /* Asegura que la sección ocupe toda la altura de la ventana */
+  z-index: 1;           /* El contenido debe tener un z-index superior */
+}

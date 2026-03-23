@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';  // Importa Router
 
 // Declaramos Bootstrap JS global para usar modales
 declare var bootstrap: any;
@@ -57,6 +58,8 @@ export class Principal {
   // Modal
   emocionSeleccionada: Emocion | null = null;
 
+  constructor(private router: Router) {}  // Inyecta Router
+
   abrirModal(em: Emocion) {
     this.emocionSeleccionada = em;
 
@@ -64,6 +67,20 @@ export class Principal {
     if (modalEl) {
       const modal = new bootstrap.Modal(modalEl);
       modal.show();
+    }
+  }
+  redirigirPagina() {
+    // Cerrar el modal antes de redirigir
+    const modalEl = document.getElementById('emocionModal');
+    if (modalEl) {
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      modal.hide();  // Cierra el modal
+    }
+    if (this.emocionSeleccionada) {
+      const emocionTitulo = this.emocionSeleccionada.titulo.toLowerCase();
+      this.router.navigate([`/emociones/${emocionTitulo}`]);
+    } else {
+      console.log('No se ha seleccionado ninguna emoción');
     }
   }
 }

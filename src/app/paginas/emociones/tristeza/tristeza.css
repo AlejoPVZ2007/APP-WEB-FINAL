@@ -1,44 +1,18 @@
 /* ===================================================
-   Cuerpo de la página "Tristeza" con imagen de fondo
+   TIPOGRAFÍA
 =================================================== */
-body {
-  background-color: #ee0606; /* Fondo claro */
-  margin: 0;
-  padding: 0;
-}
-
-#textoInicio{
-  color: black;
-  background-color: #0db1e7a9;
-}
-.tristeza-body {
-  background-color: #0db1e7; /* Fondo azul claro (Tristeza) */
-  min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
-  padding: 20px;
-}
-
-.tristeza-body {
-  background-image: url('/assets/images/tristeza2.jpg');  /* Ruta a la imagen de fondo */
-  background-size: cover;  /* La imagen cubre toda el área */
-  background-position: center;  /* Centra la imagen */
-  min-height: 100vh;  /* Asegura que ocupe toda la altura de la pantalla */
-  padding: 50px 0;  /* Espaciado para que el contenido no esté pegado al borde */
-  color: #fff;  /* Texto blanco para que contraste con el fondo */
-}
-
-.tristeza-body .container {
-  max-width: 1200px; /* Ancho máximo del contenedor */
-  
-}
-
-
 h1 {
-  color: #313131; /* Color blanco para el título */
+  color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* ✅ quedó la segunda, pisa a la primera */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
-h2 {
-  color: #313131;
+
+h4{
+  color: #d6e4f0;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 .lead {
   font-size: 1.25rem;
@@ -50,150 +24,138 @@ h2 {
   text-align: center;
 }
 
-/* Estilos para las imágenes */
+/* ===================================================
+   TEXTO DESCRIPCIÓN INICIAL
+=================================================== */
+#textoDescripcion p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #c9d8f0;        /* azul claro suave */
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  border-left: 3px solid #4a6fa5; /* 👈 línea decorativa lateral */
+  padding-left: 15px;
+  margin-bottom: 1.5rem;
+}
+/* ===================================================
+   BODY Y FONDO
+=================================================== */
+body {
+  background-color: #1a2a4a; /* 👈 mismo color que #fondofrases */
+  margin: 0;
+  padding: 0;
+}
+
+.tristeza-body {
+  /* background-image: url('/assets/images/tristeza2.jpg'); */
+  background-color: #1a2a4a; /* 👈 agrega esto */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+.tristeza-body .container {
+  max-width: 1200px;
+}
+
+/* ===================================================
+   CANVAS LLUVIA
+=================================================== */
+.canvas-lluvia {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* ===================================================
+   SECCIÓN INICIO
+=================================================== */
+#textoInicio {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 20px 30px;
+  color: #ffffff;
+}
+
+/* ===================================================
+   IMÁGENES
+=================================================== */
 .img-fluid {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-/* Espaciado y tamaño para los párrafos */
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem; /* Ajuste del tamaño del título en pantallas pequeñas */
-  }
-
-  .lead {
-    font-size: 1.1rem; /* Ajuste del tamaño del texto en pantallas pequeñas */
-  }
-}
-
-/* Formulario */
-
+/* ===================================================
+   TARJETAS GENERALES
+=================================================== */
 .card {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.custom-textarea {
-  border-radius: 5px;
-  font-size: 1rem;
-  padding: 6px 12px; /* Reduce el padding lateral */
-  background-color: #f0f0f0;
+  background-color: rgb(255, 255, 255);
   border: 1px solid #ccc;
-}
-
-.custom-button {
-  background-color: #f15a24; /* Naranja */
-  color: white;
-  font-weight: bold;
-  padding: 8px 15px; /* Reduce el padding lateral */
-  border-radius: 5px;
-  border: none;
-  transition: background-color 0.3s;
-}
-
-.custom-button:hover {
-  background-color: #e94e1b; /* Naranja más oscuro */
-}
-
-/* Aseguramos que el textarea y los botones sean interactivos */
-textarea, button {
-  pointer-events: auto;  /* Asegura que el texto y los botones sean interactivos */
-  z-index: 10;           /* Asegura que no haya elementos que los tapen */
-}
-
-textarea {
-  resize: vertical;      /* Permite cambiar el tamaño verticalmente si se desea */
-  min-height: 120px;      /* Asegura que el textarea tenga un tamaño mínimo visible */
-  padding: 10px;          /* Espaciado interno para que el texto no se quede pegado a los bordes */
-}
-
-/* Aseguramos que las tarjetas tengan el fondo adecuado y el espacio correcto */
-.card {
+  border-radius: 8px;
   padding: 15px;
-  position: relative; /* Asegura que las tarjetas no se solapen con otros elementos */
-  z-index: 1;         /* Configura el z-index para que no se solape con otros elementos */
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #f15a24; /* Naranja */
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  transition: background-color 0.3s;
-  margin-top: 10px; /* Para que el botón no esté pegado al formulario */
-}
-
-button:hover {
-  background-color: #e94e1b; /* Naranja más oscuro */
-}
-
-/*COMENTARIOS*/
-.card {
-  background-color: rgb(255, 255, 255);  /* Fondo blanco */
-  border: 1px solid #ccc;  /* Borde suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .card-body {
-  padding: 15px; /* Ajusta el padding si es necesario */
+  padding: 15px;
   color: rgb(49, 42, 39);
 }
 
+.card-text {
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .card.mb-3 {
-  margin-bottom: 1.5rem;  /* Asegura que las tarjetas tengan un margen adecuado */
+  margin-bottom: 1.5rem;
 }
 
-/*frases*/
-/* Ajustes visuales */
+/* ===================================================
+   FONDO SECCIÓN FRASES
+=================================================== */
 #fondofrases {
-  background-color: #0db1e78e;
-  background-size: cover;           /* Asegura que la imagen cubra todo el contenedor */
-  background-position: center;      /* Centra la imagen dentro del contenedor */
-  background-repeat: no-repeat;     /* Evita que la imagen se repita */
-  padding: 30px 0;                  /* Añadir padding superior e inferior */
-  border-radius: 10px;              /* Bordes redondeados */
+  background-color: #4a6fa5;;
+  padding: 40px 0;
 }
-
-#frases .card {
-  background-color: #f8f9fa; /* Fondo claro */
-  border: 1px solid #ddd;     /* Borde suave */
-  padding: 15px;               /* Padding ajustado */
-}
-
-#frases .card-body {
-  padding: 15px;               /* Reduce el padding interior */
-}
-
+/*
+#frases .card:hover { background-color: #6b8fc7; }
+#frases .card:hover { background-color: #4a2c6b; }
+#frases .card:hover { background-color: #2c6b5a; } 
+/* ===================================================
+   SECCIÓN FRASES (#frases)
+=================================================== */
 #frases h4 {
-  font-size: 1.75rem;          /* Tamaño más grande para el título */
-  font-weight: bold;           /* Hacerlo más destacado */
+  font-size: 1.75rem;
+  font-weight: bold;
 }
 
 #frases .row {
-  margin-top: 2rem;            /* Espaciado superior entre las tarjetas */
+  margin-top: 2rem;
 }
-
-.card-text {
-  font-size: 1rem;             /* Tamaño del texto */
-  font-style: italic;          /* Estilo de fuente en cursiva */
+#fondocomentarios {
+  background-color: #6b8fc7;; 
 }
-
-/* cards frases de apoyo*/
+/* ===================================================
+   TARJETAS DE FRASES (#card1)
+=================================================== */
 #card1 {
-  width: 100%;                  /* ocupa todo el ancho de la columna */
-  min-height: 300px;            /* altura más grande */
-  border: 2px solid #007bff;    /* borde azul */
+  width: 100%;
+  min-height: 300px;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-  background-color: #f8f9fa;
+  background-color: #2c3e6b;
   padding: 20px;
   font-family: 'Arial', sans-serif;
   display: flex;
@@ -207,8 +169,129 @@ button:hover {
   transform: translateY(-5px);
 }
 
-#card1 .card-text {
+#card1 .card-text,
+#frases .card .card-text {
   font-size: 18px;
   line-height: 1.6;
-  color: #333;
+  color: #d6e4f0;
+}
+
+#frases .card {
+  background-color: #2c3e6b !important;
+  border: none !important;
+}
+
+/* ===================================================
+   FORMULARIO
+=================================================== */
+.custom-textarea {
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  padding: 10px;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* ===================================================
+   BOTONES
+=================================================== */
+.custom-button {
+  background-color: #f15a24;
+  color: white;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #e94e1b;
+}
+
+textarea, button {
+  pointer-events: auto;
+  z-index: 10;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #f15a24;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e94e1b;
+}
+/* ===================================================
+   BOTÓN COMENTARIO
+=================================================== */
+#fondocomentarios .btn {
+  display: block;
+  margin: 10px 0;
+  width: fit-content;
+  padding: 6px 30px;
+}
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===================================================
+   TARJETAS DE FRASES - HOVER
+=================================================== */
+.tristeza-body #fondofrases #frases .card {
+  background-color: #2c3e6b !important;
+  border: none !important;
+  transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer;
+}
+
+.tristeza-body #fondofrases #frases .card:hover {
+  background-color: #4a6fa5 !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.tristeza-body #fondofrases #frases .card .card-text {
+  color: #d6e4f0 !important;
+  transition: color 0.4s ease !important;
+}
+
+.tristeza-body #fondofrases #frases .card:hover .card-text {
+  color: #ffffff !important;
+}
+
+.img-tristeza {
+  animation: respirar 4s ease-in-out infinite;
+  filter: grayscale(30%) brightness(0.85);
+}
+/* ===================================================
+   ANIMACIÓN IMAGEN TRISTEZA
+=================================================== */
+@keyframes respirar {
+  0%   { transform: scale(1);    filter: grayscale(30%) brightness(0.85); }
+  50%  { transform: scale(1.03); filter: grayscale(60%) brightness(0.75); }
+  100% { transform: scale(1);    filter: grayscale(30%) brightness(0.85); }
 }

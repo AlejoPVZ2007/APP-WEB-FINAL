@@ -1,64 +1,246 @@
-<canvas #canvasLluvia id="lluvia"></canvas>
-
-
-
-<div class="container mt-5">
-  <div class="text-center mb-4">
-    <h1>¿Tienes alegría?</h1>
-    <p>Compártenos lo que sientes hoy</p>
+<!-- HERO -->
+<section class="ale-hero">
+  <div class="ale-hero-overlay"></div>
+  <img src="assets/images/AlegriaCarrousel.jpg" alt="Alegría" class="ale-hero-img">
+  <div class="container ale-hero-content">
+    <span class="ale-eyebrow">😄 Emoción</span>
+    <h1 class="ale-hero-titulo">Alegría</h1>
+    <p class="ale-hero-sub">La emoción que nos impulsa hacia la vida. Nos conecta con el presente, nos da energía y nos recuerda que vale la pena estar aquí.</p>
   </div>
+</section>
 
-  <!-- FORMULARIO -->
-  <div class="card mb-4 shadow">
-    <div class="card-body">
-      <form (submit)="publicar($event)">
-        <textarea class="form-control"
-          rows="3"
-          [(ngModel)]="mensaje"
-          name="mensaje"
-          placeholder="Escribe lo que sientes…"></textarea>
-
-        <button class="btn btn-warning mt-2">Publicar</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- COMENTARIOS -->
-  <h4>Comentarios recientes</h4>
-  <div *ngFor="let c of comentarios" class="card mb-3 shadow-sm">
-    <div class="card-body">
-      <h6 class="fw-bold">{{c.usuario}}</h6>
-      <p>{{c.texto}}</p>
-      <small class="text-muted">{{c.tiempo}}</small>
-    </div>
-  </div>
-</div>
-
-<!-- FRASES -->
-<div class="container my-4">
-  <h4 class="text-center text-primary">Frases del Día</h4>
-  <div class="row">
-    <div class="col-md-4 mb-3" *ngFor="let f of frases">
-      <div class="card frase-card shadow-sm" (click)="abrirFrase(f)" style="cursor:pointer;">
-        <div class="card-body text-center">
-          <span class="frase-icon">⭐</span>
+<!-- DEFINICIÓN -->
+<section class="ale-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="ale-eyebrow">¿Qué es?</span>
+        <h2 class="ale-titulo">La alegría como fuerza vital</h2>
+        <p class="ale-texto">La alegría es una emoción positiva fundamental que surge cuando percibimos que algo bueno nos ha ocurrido o nos va a ocurrir. Es mucho más que una sonrisa: es un estado interno de bienestar que nos impulsa a conectar, crear y crecer.</p>
+        <p class="ale-texto">La psicología distingue múltiples formas: la <strong>alegría espontánea</strong> ante un momento inesperado, la <strong>alegría compartida</strong> que se multiplica con otros, la <strong>alegría serena</strong> del agradecimiento y la <strong>alegría profunda</strong> que nace del propósito.</p>
+        <div class="ale-stats">
+          <div class="ale-stat">
+            <span class="ale-stat-n">+50%</span>
+            <span class="ale-stat-l">Más energía</span>
+          </div>
+          <div class="ale-stat">
+            <span class="ale-stat-n">3x</span>
+            <span class="ale-stat-l">Más creatividad</span>
+          </div>
+          <div class="ale-stat">
+            <span class="ale-stat-n">+60%</span>
+            <span class="ale-stat-l">Mejor salud</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="ale-def-img-wrap">
+          <img src="assets/images/Alegria.jpg" alt="Alegría" class="ale-def-img">
+          <div class="ale-def-badge">😄</div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- MODAL -->
-<div class="modal-overlay" *ngIf="fraseSeleccionada" (click)="cerrarFrase()">
-  <div class="modal-frase" (click)="$event.stopPropagation()">
-    <span class="modal-icon">⭐</span>
-    <p>{{fraseSeleccionada}}</p>
-    <button class="btn btn-warning mt-3" (click)="cerrarFrase()">Cerrar</button>
+<!-- CARACTERÍSTICAS -->
+<section class="ale-seccion ale-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="ale-eyebrow">Sus rasgos</span>
+      <h2 class="ale-titulo claro">Características de la alegría</h2>
+      <p class="ale-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="ale-card">
+          <div class="ale-card-icono">{{ c.icono }}</div>
+          <h4 class="ale-card-titulo">{{ c.titulo }}</h4>
+          <p class="ale-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- AUDIO -->
-<audio #audioFondo loop>
-  <source src="assets/audio.mp3" type="audio/mpeg">
-</audio>
+<!-- CÓMO DESARROLLARLA -->
+<section class="ale-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="ale-eyebrow">Crécela</span>
+      <h2 class="ale-titulo">¿Cómo cultivar la alegría?</h2>
+      <p class="ale-subtitulo">Pasos concretos para fortalecer la alegría en tu vida</p>
+    </div>
+    <div class="ale-pasos">
+      <div class="ale-paso" *ngFor="let p of pasos; let i = index">
+        <div class="ale-paso-num">{{ i + 1 }}</div>
+        <div class="ale-paso-info">
+          <h4 class="ale-paso-titulo">{{ p.titulo }}</h4>
+          <p class="ale-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- BENEFICIOS -->
+<section class="ale-seccion ale-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="ale-eyebrow">¿Por qué importa?</span>
+      <h2 class="ale-titulo claro">Beneficios de la alegría</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="ale-ben">
+          <div class="ale-ben-icono">{{ b.icono }}</div>
+          <h4 class="ale-ben-titulo">{{ b.titulo }}</h4>
+          <p class="ale-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="ale-seccion ale-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="ale-eyebrow claro">Inspiración</span>
+      <h2 class="ale-titulo claro">Frases sobre la alegría</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="ale-cita-card">
+          <span class="ale-comilla">"</span>
+          <p class="ale-cita-texto">{{ c.frase }}</p>
+          <span class="ale-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="ale-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="ale-eyebrow">Ponla en práctica</span>
+      <h2 class="ale-titulo">Actividades para cultivar la alegría</h2>
+      <p class="ale-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="ale-actividad">
+          <div class="ale-act-header">
+            <span class="ale-act-icono">{{ a.icono }}</span>
+            <h4 class="ale-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="ale-act-texto">{{ a.texto }}</p>
+          <span class="ale-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="ale-seccion ale-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="ale-eyebrow">Tu opinión</span>
+      <h2 class="ale-titulo claro">Comentarios y calificación</h2>
+      <p class="ale-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text"
+                   placeholder="¿Cómo te llamas?"
+                   [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Qué piensas sobre la alegría? ¿Cómo te identificas con esta emoción?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en comentar sobre esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</section>

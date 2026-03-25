@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';   // 👈 para *ngFor
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,15 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './calma.html',
   styleUrls: ['./calma.css']
 })
-export class Calma implements OnInit {
+export class Calma implements OnInit, OnDestroy {
+
+  constructor() {
+    document.body.classList.add('pagina-calma'); // 👈 agrega clase al entrar
+  }
+
+  ngOnDestroy() {
+    document.body.classList.remove('pagina-calma'); // 👈 quita clase al salir
+  }
 
   mensaje: string = '';
 

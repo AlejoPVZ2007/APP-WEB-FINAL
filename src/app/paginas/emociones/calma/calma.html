@@ -1,53 +1,244 @@
-
-<div class="container mt-5">
-  <div class="text-center mb-4">
-    <h1>¿Estás traquilo?</h1>
-    <p>Compártenos lo que sientes hoy</p>
+<!-- HERO -->
+<section class="conf-hero">
+  <div class="conf-hero-overlay"></div>
+  <img src="assets/images/confianza.jpg" alt="Confianza" class="conf-hero-img">
+  <div class="container conf-hero-content">
+    <span class="conf-eyebrow">✌️ Emoción</span>
+    <h1 class="conf-hero-titulo">Calma</h1>
+    <p class="conf-hero-sub">La emoción que nos permite encontrar el equilibrio interno, incluso en medio del caos. Nos da la tranquilidad necesaria para pensar con claridad y actuar con sabiduría.</p>
   </div>
+</section>
 
-  <!-- Formulario -->
-  <div class="form-box">
-    <form (ngSubmit)="publicar()">
-      <div>
-        <textarea
-          [(ngModel)]="mensaje"
-          name="mensaje"
-          placeholder="Escribe lo que sientes…">
-        </textarea>
+<!-- DEFINICIÓN -->
+<section class="conf-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="conf-eyebrow">¿Qué es?</span>
+        <h2 class="conf-titulo">La calma como ancla interior</h2>
+        <p class="conf-texto">La calma es una emoción fundamental que nace de la tranquilidad en uno mismo y en el entorno. Es la certeza de que, pase lo que pase, tenemos los recursos para afrontarlo y que podemos contar con otros cuando lo necesitamos.</p>
+        <p class="conf-texto">La psicología distingue múltiples formas: la <strong>autoconfianza</strong> (creer en nuestras capacidades), la <strong>confianza interpersonal</strong> (fiarnos de otros), la <strong>confianza anticipada</strong> (expectativas positivas sobre el futuro) y la <strong>confianza institucional</strong> (fe en sistemas y estructuras).</p>
+        <div class="conf-stats">
+          <div class="conf-stat">
+            <span class="conf-stat-n">+75%</span>
+            <span class="conf-stat-l">Más resiliencia</span>
+          </div>
+          <div class="conf-stat">
+            <span class="conf-stat-n">2.5x</span>
+            <span class="conf-stat-l">Más colaboración</span>
+          </div>
+          <div class="conf-stat">
+            <span class="conf-stat-n">+40%</span>
+            <span class="conf-stat-l">Mejor desempeño</span>
+          </div>
+        </div>
       </div>
-      <button type="submit">Publicar</button>
-    </form>
-  </div>
-
-  <!-- Comentarios dinámicos -->
-  <h4 class="mb-3">Comentarios recientes</h4>
-
-  <div *ngFor="let c of comentarios" class="card mb-3 shadow-sm">
-    <div class="card-body">
-      <h6 class="fw-bold" style="color: black;">{{c.usuario}}</h6>
-      <p style="color: black;">{{c.texto}}</p>
-      <small class="text-muted">{{c.tiempo}}</small>
+      <div class="col-md-6">
+        <div class="conf-def-img-wrap">
+          <img src="assets/images/calma02.jpg" alt="Calma" class="conf-def-img">
+          <div class="conf-def-badge">✌️</div>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- FRASES -->
-    <div class="container my-4">
-    <h4 class="text-center text-primary">Frases del Día</h4>
-    <div class="row">
-        <div class="col-md-4 mb-3" *ngFor="let f of frases">
-        <div class="card frase-card shadow-sm" (click)="abrirFrase(f)" style="cursor:pointer;">
-            <div class="card-body text-center">
-            <span class="frase-icon">✌️</span>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section class="conf-seccion conf-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="conf-eyebrow">Sus rasgos</span>
+      <h2 class="conf-titulo claro">Características de la calma</h2>
+      <p class="conf-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="conf-card">
+          <div class="conf-card-icono">{{ c.icono }}</div>
+          <h4 class="conf-card-titulo">{{ c.titulo }}</h4>
+          <p class="conf-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO DESARROLLARLA -->
+<section class="conf-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="conf-eyebrow">Crécela</span>
+      <h2 class="conf-titulo">¿Cómo construir calma?</h2>
+      <p class="conf-subtitulo">Pasos concretos para fortalecer la calma en tu vida</p>
+    </div>
+    <div class="conf-pasos">
+      <div class="conf-paso" *ngFor="let p of pasos; let i = index">
+        <div class="conf-paso-num">{{ i + 1 }}</div>
+        <div class="conf-paso-info">
+          <h4 class="conf-paso-titulo">{{ p.titulo }}</h4>
+          <p class="conf-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="conf-seccion conf-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="conf-eyebrow">¿Por qué importa?</span>
+      <h2 class="conf-titulo claro">Beneficios de la calma</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="conf-ben">
+          <div class="conf-ben-icono">{{ b.icono }}</div>
+          <h4 class="conf-ben-titulo">{{ b.titulo }}</h4>
+          <p class="conf-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="conf-seccion conf-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="conf-eyebrow claro">Inspiración</span>
+      <h2 class="conf-titulo claro">Frases sobre la calma</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="conf-cita-card">
+          <span class="conf-comilla">"</span>
+          <p class="conf-cita-texto">{{ c.frase }}</p>
+          <span class="conf-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="conf-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="conf-eyebrow">Ponla en práctica</span>
+      <h2 class="conf-titulo">Actividades para cultivar la calma</h2>
+      <p class="conf-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="conf-actividad">
+          <div class="conf-act-header">
+            <span class="conf-act-icono">{{ a.icono }}</span>
+            <h4 class="conf-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="conf-act-texto">{{ a.texto }}</p>
+          <span class="conf-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="conf-seccion conf-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="conf-eyebrow">Tu opinión</span>
+      <h2 class="conf-titulo claro">Comentarios y calificación</h2>
+      <p class="conf-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text" placeholder="¿Cómo te llamas?" [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
             </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Qué piensas sobre la confianza? ¿Cómo te identificas con esta emoción?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
         </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
         </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en comentar sobre esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
     </div>
-    </div>
-    <!-- MODAL -->
-    <div class="modal-overlay" *ngIf="fraseSeleccionada" (click)="cerrarFrase()">
-    <div class="modal-frase" (click)="$event.stopPropagation()">
-        <span class="modal-icon">✌️</span>
-        <p>{{fraseSeleccionada}}</p>
-        <button class="btn btn-warning mt-3" (click)="cerrarFrase()">Cerrar</button>
-    </div>
-    </div>
-</div>
+  </div>
+</section>

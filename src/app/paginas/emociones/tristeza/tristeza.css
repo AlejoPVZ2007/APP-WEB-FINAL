@@ -6,7 +6,7 @@ h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif; /* ✅ quedó la segunda, pisa a la primera */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 6px rgba(24, 18, 18, 0.5);
 }
 
 h4 {
@@ -42,14 +42,14 @@ h4 {
    BODY Y FONDO
 =================================================== */
 body {
-  background-color: #1a2a4a; /* 👈 mismo color que #fondofrases */
+  background-color: #784FCF; /* 👈 mismo color que #fondofrases */
   margin: 0;
   padding: 0;
 }
 
 .tristeza-body {
   /* background-image: url('/assets/images/tristeza2.jpg'); */
-  background-color: #1a2a4a; /* 👈 agrega esto */
+  background-color: #4F66CF; /* 👈 agrega esto */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -145,7 +145,7 @@ body {
   margin-top: 2rem;
 }
 #fondocomentarios {
-  background-color: #6b8fc7;
+  background-color: #4FA6CF;
 }
 /* ===================================================
    TARJETAS DE FRASES (#card1)
@@ -204,7 +204,7 @@ textarea {
    BOTONES
 =================================================== */
 .custom-button {
-  background-color: #f15a24;
+  background-color: #CFB84F;
   color: white;
   font-weight: bold;
   padding: 8px 15px;
@@ -214,7 +214,7 @@ textarea {
 }
 
 .custom-button:hover {
-  background-color: #e94e1b;
+  background-color: #beaa4c;
 }
 
 textarea,
@@ -225,7 +225,7 @@ button {
 
 button {
   padding: 10px 20px;
-  background-color: #f15a24;
+  background-color: #CFB84F;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -235,7 +235,7 @@ button {
 }
 
 button:hover {
-  background-color: #e94e1b;
+  background-color: #CFB84F;
 }
 /* ===================================================
    BOTÓN COMENTARIO
@@ -273,7 +273,7 @@ button:hover {
 }
 
 .tristeza-body #fondofrases #frases .card:hover {
-  background-color: #4a6fa5 !important;
+  background-color: #4F66CF !important;
   transform: translateY(-5px) !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4) !important;
 }

@@ -13,14 +13,26 @@ export class Tristeza implements AfterViewInit {
   comments: string[] = [];
 
   @ViewChild('canvasLluvia') canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('audioLluvia') audioRef!: ElementRef<HTMLAudioElement>; //audio
 
   elementos: any[] = [];
   numElementos = 40;
 
   ngAfterViewInit(): void {
     this.iniciarCanvas();
+    this.iniciarAudio();
   }
 
+  iniciarAudio() {
+    const audio = this.audioRef.nativeElement;
+    audio.volume = 1; // 👈 volumen suave (0.0 a 1.0)
+
+    // 👈 el navegador bloquea audio sin interacción del usuario
+    // se activa con el primer click en la página
+    document.addEventListener('click', () => {
+      audio.play().catch(() => {});
+    }, { once: true }); // 👈 once:true para que solo se ejecute una vez
+  }
   iniciarCanvas() {
     const canvas = this.canvasRef.nativeElement;
     const ctx = canvas.getContext('2d')!;

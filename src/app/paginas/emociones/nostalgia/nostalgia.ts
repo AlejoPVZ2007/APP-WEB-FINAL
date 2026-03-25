@@ -82,10 +82,10 @@ export class Nostalgia implements AfterViewInit, OnDestroy {
         }
       });
 
-      requestAnimationFrame(animar);
+      this.animFrameId = requestAnimationFrame(animar); 
     };
 
-    requestAnimationFrame(animar);
+    this.animFrameId = requestAnimationFrame(animar); 
 
     this.resizeHandler = () => {
       canvas.width = window.innerWidth;
@@ -102,15 +102,25 @@ export class Nostalgia implements AfterViewInit, OnDestroy {
       this.audioRef.nativeElement.volume = nuevoVolumen;
     }
   }
-
+  private animFrameId!: number;
   ngOnDestroy(): void {
+    // Detener audio
     const audio = this.audioRef?.nativeElement;
     if (audio) {
       audio.pause();
       audio.currentTime = 0;
     }
 
+    // Eliminar listeners
     document.removeEventListener('click', this.clickHandler);
     window.removeEventListener('resize', this.resizeHandler);
+
+    // Detener animación del canvas
+    if (this.animFrameId) {
+      cancelAnimationFrame(this.animFrameId);
+    }
+
+    // Limpiar hojas/partículas
+    this.hojas = [];
   }
 }

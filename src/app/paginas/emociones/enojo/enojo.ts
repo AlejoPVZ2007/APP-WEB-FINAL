@@ -83,10 +83,10 @@ export class Enojo implements AfterViewInit, OnDestroy {
         });
       }
 
-      requestAnimationFrame(animar);
+      this.animFrameId = requestAnimationFrame(animar);
     };
 
-    requestAnimationFrame(animar);
+    this.animFrameId = requestAnimationFrame(animar);
 
     this.visibilityHandler = () => {
       if (document.visibilityState === 'visible') {
@@ -103,6 +103,7 @@ export class Enojo implements AfterViewInit, OnDestroy {
     document.addEventListener('visibilitychange', this.visibilityHandler);
     window.addEventListener('resize', this.resizeHandler);
   }
+  private animFrameId!: number;
 
   ngOnDestroy(): void {
     const audio = this.audioRef?.nativeElement;
@@ -114,5 +115,13 @@ export class Enojo implements AfterViewInit, OnDestroy {
     document.removeEventListener('click', this.clickHandler);
     document.removeEventListener('visibilitychange', this.visibilityHandler);
     window.removeEventListener('resize', this.resizeHandler);
+
+    // ✅ Cancelar animación
+    if (this.animFrameId) {
+      cancelAnimationFrame(this.animFrameId);
+    }
+
+    // Limpiar elementos para liberar memoria
+    this.elementos = [];
   }
 }

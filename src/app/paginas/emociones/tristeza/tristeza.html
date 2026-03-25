@@ -1,11 +1,10 @@
 <!-- Canvas FUERA y ANTES de todo -->
 <canvas #canvasLluvia class="canvas-lluvia"></canvas>
 <audio #audioLluvia loop>
-  <source src="assets/audio/" type="audio/mpeg">
+  <source src="assets/audio/" type="audio/mpeg" />
 </audio>
 
 <div class="tristeza-body">
-
   <!-- Inicio -->
   <div class="container" id="textoInicio">
     <div class="row">
@@ -19,14 +18,22 @@
 
     <div class="row">
       <div class="col-md-6">
-       <img src="assets/images/tristeza1.jpg" alt="Tristeza" class="img-fluid rounded img-tristeza" />
+        <img
+          src="assets/images/tristeza1.jpg"
+          alt="Tristeza"
+          class="img-fluid rounded img-tristeza"
+        />
       </div>
       <div class="col-md-4" id="textoinicial">
-        <p>La tristeza es una emoción natural que experimentamos cuando enfrentamos situaciones
-        difíciles. Nos ayuda a procesar la pérdida y el dolor, y es una parte importante de la
-        experiencia humana.</p>
-        <p>A través de la tristeza, podemos aprender a valorar los momentos felices y a fortalecernos
-        emocionalmente.</p>
+        <p>
+          La tristeza es una emoción natural que experimentamos cuando enfrentamos situaciones
+          difíciles. Nos ayuda a procesar la pérdida y el dolor, y es una parte importante de la
+          experiencia humana.
+        </p>
+        <p>
+          A través de la tristeza, podemos aprender a valorar los momentos felices y a fortalecernos
+          emocionalmente.
+        </p>
       </div>
     </div>
   </div>
@@ -38,8 +45,11 @@
         <div class="card shadow-sm">
           <div class="card-body">
             <div class="mb-3">
-              <textarea class="form-control custom-textarea" rows="3"
-                placeholder="Escribe lo que sientes… no estás solo."></textarea>
+              <textarea
+                class="form-control custom-textarea"
+                rows="3"
+                placeholder="Escribe lo que sientes… no estás solo."
+              ></textarea>
             </div>
             <button class="btn btn-warning">Publicar</button>
           </div>
@@ -48,83 +58,93 @@
     </div>
   </div>
 
-<!-- Comentarios -->
-<div id="fondocomentarios">
-  <div class="container py-4">
-    <h4 class="mb-3">Comentarios recientes</h4>
-    <div class="card mb-3 shadow-sm">
-      <div class="card-body">
-        <h6 class="fw-bold">Usuario123</h6>
-        <p class="mb-1">pipipi</p>
-        <small class="text-muted">Hace 2 minutos</small>
+  <!-- Comentarios -->
+  <div id="fondocomentarios">
+    <div class="container py-4">
+      <h4 class="mb-3">Comentarios recientes</h4>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-bold">Usuario123</h6>
+          <p class="mb-1">pipipi</p>
+          <small class="text-muted">Hace 2 minutos</small>
+        </div>
+        <button class="btn btn-warning">Comentar</button>
       </div>
-      <button class="btn btn-warning">Comentar</button>
-    </div>
-    <div class="card mb-3 shadow-sm">
-      <div class="card-body">
-        <h6 class="fw-bold">Ana</h6>
-        <p class="mb-1">triste</p>
-        <small class="text-muted">Hace 10 minutos</small>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-bold">Ana</h6>
+          <p class="mb-1">triste</p>
+          <small class="text-muted">Hace 10 minutos</small>
+        </div>
+        <button class="btn btn-warning">Comentar</button>
       </div>
-      <button class="btn btn-warning">Comentar</button>
     </div>
   </div>
-</div>
 
-<!-- Frases -->
-<div id="fondofrases">
-  <div class="container py-4" id="frases">
-    <h4 class="text-center py-3">Frases del Dia</h4>
-    <div class="row justify-content-center align-items-stretch">
+  <!-- Frases -->
+  <div id="fondofrases">
+    <div class="container py-4" id="frases">
+      <h4 class="text-center py-3">Frases del Dia</h4>
+      <div class="row justify-content-center align-items-stretch">
+        <div class="col-md-6 mb-4">
+          <div #card class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "La ira es solo el primer paso, el control es lo que te libera."
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="col-md-6 mb-4">
-        <div #card class="card h-100">
-          <div class="card-body">
-            <p class="card-text">"La ira es solo el primer paso, el control es lo que te libera."</p>
+        <div class="col-md-6 mb-4">
+          <div #card class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "Respira profundamente, lo que hoy te molesta no vale la pena."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div #card class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "Puedes controlar tus emociones, no dejes que ellas te controlen a ti."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div #card class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"El silencio es a menudo la respuesta más sabia ante la ira."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div #card class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "Cada vez que calmas tu ira, te acercas más a tu paz interior."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div #card class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "La paciencia no es la capacidad de esperar, sino cómo nos comportamos mientras
+                esperamos."
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 mb-4">
-        <div #card class="card h-100">
-          <div class="card-body">
-            <p class="card-text">"Respira profundamente, lo que hoy te molesta no vale la pena."</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-4">
-        <div #card class="card h-100">
-          <div class="card-body">
-            <p class="card-text">"Puedes controlar tus emociones, no dejes que ellas te controlen a ti."</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-4">
-        <div #card class="card h-100">
-          <div class="card-body">
-            <p class="card-text">"El silencio es a menudo la respuesta más sabia ante la ira."</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-4">
-        <div #card class="card h-100">
-          <div class="card-body">
-            <p class="card-text">"Cada vez que calmas tu ira, te acercas más a tu paz interior."</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-4">
-        <div #card class="card h-100">
-          <div class="card-body">
-            <p class="card-text">"La paciencia no es la capacidad de esperar, sino cómo nos comportamos mientras esperamos."</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>

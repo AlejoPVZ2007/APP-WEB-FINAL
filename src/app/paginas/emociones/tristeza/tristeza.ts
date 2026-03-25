@@ -32,7 +32,7 @@ export class Tristeza implements AfterViewInit {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 20 + 15,
-        speed: Math.random() * 1 + 0.5
+        speed: Math.random() * 1 + 0.5,
       });
     }
 
@@ -46,7 +46,7 @@ export class Tristeza implements AfterViewInit {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        this.elementos.forEach(e => {
+        this.elementos.forEach((e) => {
           ctx.font = e.size + 'px Arial';
           ctx.fillText('💧', e.x, e.y);
           e.y += e.speed;

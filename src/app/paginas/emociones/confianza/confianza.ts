@@ -39,7 +39,11 @@ export class Confianza implements OnInit, OnDestroy {
     'Celebrar los pequeños momentos es una forma de gratitud. La confianza no siempre llega en grandes eventos, vive en los detalles del día a día.',
     'La confianza compartida es doble confianza. Busca a alguien hoy y cuéntale algo que te haya hecho sentir seguro.',
     'La confianza es contagiosa, compártela sin miedo. Una sonrisa tuya puede cambiar el día de alguien que lo necesita.',
-    'Hoy es un día para celebrar estar vivo. La confianza más pura nace de agradecer lo que tienes exactamente en este momento.'
+    'Hoy es un día para celebrar estar vivo. La confianza más pura nace de agradecer lo que tienes exactamente en este momento.',
+    'Confía en tu capacidad para superar cualquier desafío. Cada paso que das es una prueba de tu fortaleza interior.',
+    'La confianza no es arrogancia, es amor propio. Reconoce tu valor y deja que esa luz brille para los demás.',
+    'Confía en el proceso de la vida. A veces, lo que parece un obstáculo es solo una oportunidad disfrazada.',
+    'La confianza se construye con acciones pequeñas pero constantes. Hoy, haz algo que te haga sentir orgulloso de ti mismo.'
   ];
 
   fraseSeleccionada: string = '';

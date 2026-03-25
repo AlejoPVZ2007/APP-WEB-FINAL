@@ -1,1 +1,248 @@
-<p>amor works!</p>
+<!-- HERO -->
+<section class="amor-hero">
+  <div class="amor-hero-overlay"></div>
+  <img src="assets/images/AmorFondo.jpeg" alt="Amor" class="amor-hero-img">
+  <div class="container amor-hero-content">
+    <span class="amor-eyebrow">🥰 Emoción</span>
+    <h1 class="amor-hero-titulo">Amor</h1>
+    <p class="amor-hero-sub">La fuerza más poderosa del ser humano. Nos conecta, nos transforma y nos da sentido.</p>
+   
+  </div>
+</section>
+
+<!-- DEFINICIÓN -->
+<section class="amor-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="amor-eyebrow">¿Qué es?</span>
+        <h2 class="amor-titulo">El amor como fuerza transformadora</h2>
+        <p class="amor-texto">El amor es una de las emociones más complejas y poderosas del ser humano. Va más allá de la atracción: es un estado profundo de afecto, cuidado y compromiso hacia uno mismo o hacia otros.</p>
+        <p class="amor-texto">La psicología distingue múltiples tipos: el <strong>amor romántico</strong>, el <strong>amor filial</strong> hacia la familia, el <strong>amor fraternal</strong> hacia los amigos, y el <strong>amor propio</strong>, base de todos los demás.</p>
+        <div class="amor-stats">
+          <div class="amor-stat">
+            <span class="amor-stat-n">+40%</span>
+            <span class="amor-stat-l">Más felicidad</span>
+          </div>
+          <div class="amor-stat">
+            <span class="amor-stat-n">2x</span>
+            <span class="amor-stat-l">Mejor salud</span>
+          </div>
+          <div class="amor-stat">
+            <span class="amor-stat-n">+70%</span>
+            <span class="amor-stat-l">Menos soledad</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="amor-def-img-wrap">
+          <img src="assets/images/Amor05.jpg" alt="Amor" class="amor-def-img">
+          <div class="amor-def-badge">🥰</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section class="amor-seccion amor-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="amor-eyebrow">Sus rasgos</span>
+      <h2 class="amor-titulo claro">Características del amor</h2>
+      <p class="amor-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="amor-card">
+          <div class="amor-card-icono">{{ c.icono }}</div>
+          <h4 class="amor-card-titulo">{{ c.titulo }}</h4>
+          <p class="amor-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO DESARROLLARLO -->
+<section class="amor-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="amor-eyebrow">Crécelo</span>
+      <h2 class="amor-titulo">¿Cómo cultivar el amor?</h2>
+      <p class="amor-subtitulo">Pasos concretos para fortalecer el amor en tu vida</p>
+    </div>
+    <div class="amor-pasos">
+      <div class="amor-paso" *ngFor="let p of pasos; let i = index">
+        <div class="amor-paso-num">{{ i + 1 }}</div>
+        <div class="amor-paso-info">
+          <h4 class="amor-paso-titulo">{{ p.titulo }}</h4>
+          <p class="amor-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="amor-seccion amor-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="amor-eyebrow">¿Por qué importa?</span>
+      <h2 class="amor-titulo claro">Beneficios del amor</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="amor-ben">
+          <div class="amor-ben-icono">{{ b.icono }}</div>
+          <h4 class="amor-ben-titulo">{{ b.titulo }}</h4>
+          <p class="amor-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="amor-seccion amor-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="amor-eyebrow claro">Inspiración</span>
+      <h2 class="amor-titulo claro">Frases sobre el amor</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="amor-cita-card">
+          <span class="amor-comilla">"</span>
+          <p class="amor-cita-texto">{{ c.frase }}</p>
+          <span class="amor-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="amor-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="amor-eyebrow">Ponlo en práctica</span>
+      <h2 class="amor-titulo">Actividades para cultivar el amor</h2>
+      <p class="amor-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="amor-actividad">
+          <div class="amor-act-header">
+            <span class="amor-act-icono">{{ a.icono }}</span>
+            <h4 class="amor-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="amor-act-texto">{{ a.texto }}</p>
+          <span class="amor-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="amor-seccion amor-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="amor-eyebrow">Tu opinión</span>
+      <h2 class="amor-titulo claro">Comentarios y calificación</h2>
+      <p class="amor-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text"
+                   placeholder="¿Cómo te llamas?"
+                   [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Qué piensas sobre el amor? ¿Cómo te identificas con esta emoción?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en comentar sobre esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</section>
+

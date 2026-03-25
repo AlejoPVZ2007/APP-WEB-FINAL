@@ -28,10 +28,15 @@ CREATE TABLE Emociones (
 
 INSERT INTO Emociones (Nombre) VALUES
 ('Alegría'),
-('Tristeza'),
+('Amor'),
+('Calma'),
+('Confianza'),
+('Enojo'),
 ('Miedo'),
-('Ira'),
-('Asco');
+('Nostalgia'),
+('Sorpresa'),
+('Tristeza');
+
 
 
 CREATE TABLE Comentarios (

@@ -1,1 +1,142 @@
-<p>nostalgia works!</p>
+<!-- Canvas opcional, si quieres partículas suaves -->
+<canvas #canvasNostalgia class="canvas-nostalgia"></canvas>
+
+<audio #audioNostalgia loop>
+  <source src="assets/sonido/nostalgiaA.mp3" type="audio/mpeg" />
+</audio>
+
+<div class="nostalgia-body">
+  <!-- Inicio -->
+  <div class="container" id="textoInicioNostalgia">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">¿Sientes nostalgia?</h1>
+        <p class="lead text-center">
+          La nostalgia nos invita a recordar y reflexionar sobre momentos importantes.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          src="assets/images/nostalgia1.jpg"
+          alt="Nostalgia"
+          class="img-fluid rounded img-nostalgia"
+        />
+      </div>
+      <div class="col-md-4" id="textoDescripcionNostalgia">
+        <p>La nostalgia es una emoción que conecta el presente con recuerdos valiosos.</p>
+        <p>Nos permite valorar lo que hemos vivido y aprender a apreciar cada instante.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <div class="container mt-3 mb-3">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-10 col-12">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="mb-3">
+              <textarea
+                class="form-control custom-textarea"
+                rows="3"
+                placeholder="Escribe tus recuerdos…"
+              ></textarea>
+            </div>
+            <button class="btn btn-secondary">Publicar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Control de Volumen -->
+  <div class="control-volumen-nostalgia">
+    <label for="volumenNostalgia">Volumen 🎵</label>
+    <input
+      id="volumenNostalgia"
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      [value]="volumen"
+      (input)="cambiarVolumen($event)"
+    />
+    <small>{{ volumen * 100 | number: '1.0-0' }}%</small>
+  </div>
+  <!-- Comentarios -->
+  <div id="fondocomentariosNostalgia">
+    <div class="container py-4">
+      <h4 class="mb-3">Comentarios recientes</h4>
+
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-bold">Usuario123</h6>
+          <p class="mb-1">Recordando aquellos días…</p>
+          <small class="text-muted">Hace 2 minutos</small>
+        </div>
+        <button class="btn btn-secondary">Comentar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frases -->
+  <div id="fondofrasesNostalgia">
+    <div class="container py-4" id="frasesNostalgia">
+      <h4 class="text-center py-3">Frases del día</h4>
+
+      <div class="row justify-content-center align-items-stretch">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "Los recuerdos son el hilo invisible que nos conecta con el pasado."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"A veces mirar atrás nos ayuda a avanzar mejor."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"La nostalgia es dulce, incluso cuando duele un poco."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"La nostalgia es dulce, incluso cuando duele un poco."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"La nostalgia es dulce, incluso cuando duele un poco."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"La nostalgia es dulce, incluso cuando duele un poco."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

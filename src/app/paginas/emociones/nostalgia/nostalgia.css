@@ -1,0 +1,213 @@
+/* ===================================================
+   BODY Y FONDO
+=================================================== */
+body {
+  background-color: #4b3f72; /* morado nostalgia */
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #9b59b6; /* línea delimitadora */
+}
+
+.nostalgia-body {
+  background-color: #4b3f72;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 0 0;
+  color: #f0e6f6;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================================
+   CANVAS NOSTALGIA
+=================================================== */
+.canvas-nostalgia {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* ===================================================
+   SECCIÓN INICIO
+=================================================== */
+#textoInicioNostalgia {
+  background-color: rgba(75, 63, 114, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 20px 30px;
+  color: #f0e6f6;
+}
+
+/* ===================================================
+   TEXTO DESCRIPCIÓN
+=================================================== */
+#textoDescripcionNostalgia p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #d8c7e8;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  border-left: 3px solid #9b59b6;
+  padding-left: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* ===================================================
+   IMAGEN NOSTALGIA
+=================================================== */
+.img-nostalgia {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  /* SIN animación */
+}
+
+/* ===================================================
+   TARJETAS GENERALES
+=================================================== */
+.card {
+  background-color: #6c5496;
+  border: 1px solid #7d5da8;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px solid #9b59b6;
+}
+
+.card-body {
+  padding: 15px;
+  color: #f0e6f6;
+}
+
+.card-text {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* ===================================================
+   FONDO COMENTARIOS
+=================================================== */
+#fondocomentariosNostalgia {
+  background-color: #593f88;
+  padding: 0;
+  border-top: 2px solid #9b59b6;
+  border-bottom: 2px solid #9b59b6;
+}
+
+#fondocomentariosNostalgia .container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#fondocomentariosNostalgia .btn {
+  display: block;
+  margin: 10px 0;
+  width: fit-content;
+  padding: 6px 30px;
+}
+
+/* ===================================================
+   FONDO FRASES
+=================================================== */
+#fondofrasesNostalgia {
+  background-color: #593f88;
+  padding: 0;
+  border-top: 2px solid #9b59b6;
+}
+
+#frasesNostalgia .card {
+  background-color: #755aa5 !important;
+  border: none !important;
+  min-height: 220px;
+  height: auto;
+  transition:
+    background-color 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+#frasesNostalgia .card:hover {
+  background-color: #9b59b6 !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 2px solid #9b59b6;
+}
+
+#frasesNostalgia .card .card-text {
+  color: #e0d0f0 !important;
+  font-size: 18px;
+  line-height: 1.6;
+  transition: color 0.4s ease !important;
+}
+
+#frasesNostalgia .card:hover .card-text {
+  color: #ffffff !important;
+  border-bottom: 2px solid #9b59b6;
+}
+
+/* ===================================================
+   BOTONES
+=================================================== */
+button {
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: #9b59b6;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #8e44ad;
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===================================================
+   CONTROL DE VOLUMEN
+=================================================== */
+.control-volumen-nostalgia {
+  margin-top: 15px;
+  text-align: center;
+  color: #f0e6f6;
+}
+
+.control-volumen-nostalgia label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.control-volumen-nostalgia input[type='range'] {
+  width: 200px;
+  accent-color: #9b59b6; /* morado nostálgico */
+  cursor: pointer;
+}
+
+.control-volumen-nostalgia small {
+  display: block;
+  margin-top: 5px;
+  color: #d8c7e8;
+}

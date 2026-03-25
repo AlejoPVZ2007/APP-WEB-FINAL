@@ -24,9 +24,30 @@
 
   <div *ngFor="let c of comentarios" class="card mb-3 shadow-sm">
     <div class="card-body">
-      <h6 class="fw-bold">{{c.usuario}}</h6>
-      <p>{{c.texto}}</p>
+      <h6 class="fw-bold" style="color: black;">{{c.usuario}}</h6>
+      <p style="color: black;">{{c.texto}}</p>
       <small class="text-muted">{{c.tiempo}}</small>
     </div>
   </div>
+  <!-- FRASES -->
+    <div class="container my-4">
+    <h4 class="text-center text-primary">Frases del Día</h4>
+    <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let f of frases">
+        <div class="card frase-card shadow-sm" (click)="abrirFrase(f)" style="cursor:pointer;">
+            <div class="card-body text-center">
+            <span class="frase-icon">✌️</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- MODAL -->
+    <div class="modal-overlay" *ngIf="fraseSeleccionada" (click)="cerrarFrase()">
+    <div class="modal-frase" (click)="$event.stopPropagation()">
+        <span class="modal-icon">✌️</span>
+        <p>{{fraseSeleccionada}}</p>
+        <button class="btn btn-warning mt-3" (click)="cerrarFrase()">Cerrar</button>
+    </div>
+    </div>
 </div>

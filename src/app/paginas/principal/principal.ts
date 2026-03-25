@@ -76,14 +76,14 @@ export class Principal implements OnInit {
     },
     {
       id: 5,
-      titulo: 'Ira',
+      titulo: 'enojo',
       emoji: '😠',
       imagen: 'assets/images/Ira.jpg',
       alt: 'Emoción Ira',
       texto: 'Energía intensa que nos impulsa a cuestionar.',
       detalle: 'La ira surge ante situaciones que percibimos como injustas o amenazantes. Bien canalizada puede ser un motor de cambio y establecimiento de límites.',
       tags: ['Intensa', 'Límites', 'Cambio'],
-      ruta: 'ira'
+      ruta: 'enojo'
     },
     {
       id: 6,

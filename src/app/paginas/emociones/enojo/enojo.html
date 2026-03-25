@@ -1,124 +1,153 @@
-<div class="tristeza-body">
-  <div class="container" id="textoInicio">
+<!-- Canvas FUERA y ANTES de todo -->
+<canvas #canvasFuego class="canvas-enojo"></canvas>
+
+<audio #audioFuego loop>
+  <source src="assets/sonido/enojo1.mp3" type="audio/mpeg" />
+</audio>
+
+<div class="enojo-body">
+  <!-- Inicio -->
+  <div class="container" id="textoInicioEnojo">
     <div class="row">
       <div class="col-12">
-        <h1 class="text-center">¿Te sientes Irritado?</h1>
-        <p class="lead text-center"><h2>
-          La ira puede nublar nuestro juicio, pero también es una señal de que algo necesita cambiar.
-        </h2>
+        <h1 class="text-center">¿Te sientes enojado?</h1>
+        <p class="lead text-center">
+          El enojo es una emoción poderosa… aprender a controlarlo es tu mayor fortaleza.
+        </p>
       </div>
     </div>
 
     <div class="row">
-      <!-- Aquí puedes agregar más contenido sobre "Ira" -->
       <div class="col-md-6">
-        <img src="assets/images/ira2.jpg" alt="Ira" class="img-fluid rounded" />
+        <div class="img-wrapper w-100">
+          <img src="assets/images/ira1.jpg" alt="Enojo" class="img-fluid rounded img-enojo" />
+        </div>
+      </div>
+      <div class="col-md-4" id="textoDescripcionEnojo">
+        <p>
+          El enojo aparece cuando sentimos injusticia, frustración o falta de control. Es natural,
+          pero mal gestionado puede dañarnos.
+        </p>
+        <p>
+          Aprender a canalizarlo te permite transformar esa energía en algo positivo y constructivo.
+        </p>
       </div>
     </div>
   </div>
 
   <!-- Formulario -->
   <div class="container mt-3 mb-3">
-    <div class="row justify-content">
+    <div class="row justify-content-center">
       <div class="col-md-8 col-sm-10 col-12">
         <div class="card shadow-sm">
           <div class="card-body">
-            <form>
-              <div class="mb-3">
-                <textarea class="form-control" rows="3" placeholder="“Exprésate, liberar la ira nos ayuda a encontrar calma.”"></textarea>
-              </div>
-              <button class="btn btn-warning">Publicar</button>
-            </form>
+            <div class="mb-3">
+              <textarea
+                class="form-control custom-textarea"
+                rows="3"
+                placeholder="Desahógate… escribe lo que te molesta."
+              ></textarea>
+            </div>
+            <button class="btn btn-danger">Publicar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- CONTROL DE AUDIO-->
+  <div class="control-volumen">
+  <label for="volumen"></label>
+  <input
+    id="volumen"
+    type="range"
+    min="0"
+    max="1"
+    step="0.01"
+    [value]="volumen"
+    (input)="cambiarVolumen($event)"
+  />
+  <small>{{ (volumen * 100) | number:'1.0-0' }}%</small>
+</div>
   <!-- Comentarios -->
-  <div class="container mt-3 mb-3">
-    <h4 class="mb-3">Comentarios recientes</h4>
+  <div id="fondocomentariosEnojo">
+    <div class="container py-4">
+      <h4 class="mb-3">Comentarios recientes</h4>
 
-    <div class="card mb-3 shadow-sm">
-      <div class="card-body">
-        <h6 class="fw-bold">Usuario123</h6>
-        <p>Me siento furioso, ¿por qué todo siempre sale mal?</p>
-        <small class="text-muted">Hace 2 minutos</small>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-bold">Usuario123</h6>
+          <p class="mb-1">Hoy todo me irrita… no sé por qué.</p>
+          <small class="text-muted">Hace 2 minutos</small>
+        </div>
+        <button class="btn btn-danger">Comentar</button>
       </div>
-    </div>
 
-    <div class="card mb-3 shadow-sm">
-      <div class="card-body">
-        <h6 class="fw-bold">Ana</h6>
-        <p>La rabia me consume, necesito calmarme...</p>
-        <small class="text-muted">Hace 10 minutos</small>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-bold">Carlos</h6>
+          <p class="mb-1">Siento que voy a explotar con todo.</p>
+          <small class="text-muted">Hace 10 minutos</small>
+        </div>
+        <button class="btn btn-danger">Comentar</button>
       </div>
     </div>
   </div>
 
-  <!-- Div de frases de consuelo para la ira -->
-  <div id="fondofrases">
-    <div class="container mt-8" id="frases">
-      <h2 class="text-center mb-3">Frases del Día</h2>
-      <div class="row justify-content-center">
-        
-     <div class="container mt-3">
-  <div class="row justify-content-center">
+  <!-- Frases -->
+  <div id="fondofrasesEnojo">
+    <div class="container py-4" id="frasesEnojo">
+      <h4 class="text-center py-3">Frases del día</h4>
 
-    <!-- Fila 1 -->
-    <div class="col-md-6 mb-3">
-      <div id="card1" class="card">
-        <div class="card-body">
-          <p class="card-text">"La ira es solo el primer paso, el control es lo que te libera."</p>
+      <div class="row justify-content-center align-items-stretch">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"No dejes que tu enojo controle tus decisiones."</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-6 mb-3">
-      <div id="card1" class="card">
-        <div class="card-body">
-          <p class="card-text">"Respira profundamente, lo que hoy te molesta no vale la pena."</p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                "Respira… lo que hoy te molesta mañana no será tan importante."
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Fila 2 -->
-    <div class="col-md-6 mb-3">
-      <div id="card1" class="card">
-        <div class="card-body">
-          <p class="card-text">"Puedes controlar tus emociones, no dejes que ellas te controlen a ti."</p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"El control de tu mente es más fuerte que cualquier impulso."</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-6 mb-3">
-      <div id="card1" class="card">
-        <div class="card-body">
-          <p class="card-text">"El silencio es a menudo la respuesta más sabia ante la ira."</p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"La calma es una victoria sobre el enojo."</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Fila 3 -->
-    <div class="col-md-6 mb-3">
-      <div id="card1" class="card">
-        <div class="card-body">
-          <p class="card-text">"Cada vez que calmas tu ira, te acercas más a tu paz interior."</p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"No todo merece tu energía ni tu reacción."</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-6 mb-3">
-      <div id="card1" class="card">
-        <div class="card-body">
-          <p class="card-text">"La paciencia no es la capacidad de esperar, sino cómo nos comportamos mientras esperamos."</p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">"Dominar tu enojo es dominarte a ti mismo."</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-
-    </div>
-    </div>
       </div>
     </div>
   </div>

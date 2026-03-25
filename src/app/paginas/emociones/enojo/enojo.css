@@ -1,25 +1,235 @@
-#card1 {
-  width: 100%;                  /* ocupa todo el ancho de la columna */
-  min-height: 300px;            /* altura más grande */
-  border: 2px solid #007bff;    /* borde azul */
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-  background-color: #f8f9fa;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: transform 0.3s;
+/* ===================================================
+   BODY Y FONDO
+=================================================== */
+body {
+  background-color: #4a0e0e;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #e74c3c;
 }
 
-#card1:hover {
-  transform: translateY(-5px);
+.enojo-body {
+  background-color: #4a0e0e;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 0 0;
+  color: #f5c6c6;
+  position: relative;
+  z-index: 1;
 }
 
-#card1 .card-text {
+/* ===================================================
+   CANVAS ENOJO
+=================================================== */
+.canvas-enojo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* ===================================================
+   SECCIÓN INICIO
+=================================================== */
+#textoInicioEnojo {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 20px 30px;
+  color: #ffffff;
+}
+
+/* ===================================================
+   TEXTO DESCRIPCIÓN
+=================================================== */
+#textoDescripcionEnojo p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #f5b7b1;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  border-left: 3px solid #e74c3c;
+  padding-left: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* ===================================================
+   IMAGEN ENOJO
+=================================================== */
+.img-enojo {
+  animation: pulsoEnojo 2s ease-in-out infinite;
+  filter: sepia(40%) hue-rotate(-20deg) brightness(0.9);
+}
+
+@keyframes pulsoEnojo {
+  0% {
+    transform: scale(1);
+    filter: sepia(40%) hue-rotate(-20deg) brightness(0.9);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: sepia(70%) hue-rotate(-20deg) brightness(0.75);
+  }
+  100% {
+    transform: scale(1);
+    filter: sepia(40%) hue-rotate(-20deg) brightness(0.9);
+  }
+}
+
+/* ===================================================
+   TARJETAS GENERALES
+=================================================== */
+.card {
+  background-color: #5a1a1a;
+  border: 1px solid #7b2c2c;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px solid #e74c3c;
+}
+
+.card-body {
+  padding: 15px;
+  color: #f8d7da;
+}
+
+.card-text {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* ===================================================
+   FONDO COMENTARIOS
+=================================================== */
+#fondocomentariosEnojo {
+  background-color: #6b1a1a;
+  padding: 0;
+  border-top: 2px solid #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+}
+
+#fondocomentariosEnojo .container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#fondocomentariosEnojo .btn {
+  display: block;
+  margin: 10px 0;
+  width: fit-content;
+  padding: 6px 30px;
+}
+
+/* ===================================================
+   FONDO FRASES
+=================================================== */
+#fondofrasesEnojo {
+  background-color: #6b1a1a;
+  padding: 0;
+  border-top: 2px solid #e74c3c;
+}
+
+#frasesEnojo .card {
+  background-color: #8b2020 !important;
+  border: none !important;
+  min-height: 220px;
+  height: auto;
+  transition:
+    background-color 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+#frasesEnojo .card:hover {
+  background-color: #e74c3c !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5) !important;
+  border-bottom: 2px solid #e74c3c;
+}
+
+#frasesEnojo .card .card-text {
+  color: #f5b7b1 !important;
   font-size: 18px;
   line-height: 1.6;
-  color: #333;
+  transition: color 0.4s ease !important;
+}
+
+#frasesEnojo .card:hover .card-text {
+  color: #ffffff !important;
+  border-bottom: 2px solid #e74c3c;
+}
+
+/* ===================================================
+   BOTONES
+=================================================== */
+button {
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: #e74c3c;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+
+/*
+ANIMACION
+*/
+/* IMPORTANTE */
+.img-wrapper {
+  position: relative;
+  width: 100%; /* 👈 ocupa todo el ancho */
+  display: block; /* 👈 como un div normal */
+  overflow: hidden;
+}
+
+/* imagen sigue siendo responsive */
+.img-enojo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.img-wrapper img {
+  border-radius: inherit;
+}
+
+/*
+CONTROL DE AUDIO
+*/
+.control-volumen {
+  margin-top: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.control-volumen input[type='range'] {
+  width: 200px;
+  accent-color: #e74c3c; /* rojo enojo 🔥 */
+  cursor: pointer;
 }

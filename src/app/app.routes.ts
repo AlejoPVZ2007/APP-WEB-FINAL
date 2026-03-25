@@ -11,10 +11,8 @@ import { Sorpresa } from './paginas/emociones/sorpresa/sorpresa';
 
 import { Tristeza } from './paginas/emociones/tristeza/tristeza';
 import { Miedo } from './paginas/emociones/miedo/miedo';
-import { Enojo } from './paginas/emociones/enojo/enojo';
 import { Confianza } from './paginas/emociones/confianza/confianza';
-
-
+import { Enojo } from './paginas/emociones/enojo/enojo';
 
 export const routes: Routes = [
   { path: '', component: Principal },
@@ -30,6 +28,6 @@ export const routes: Routes = [
   { path: 'emociones/confianza', component: Confianza },
   { path: 'emociones/tristeza', component: Tristeza },
   { path: 'emociones/miedo', component: Miedo },
-  { path: 'emociones/ira', component: Enojo },
+  { path: 'emociones/enojo', component: Enojo },
   { path: 'emociones/alegria', component: Alegria },
 ];

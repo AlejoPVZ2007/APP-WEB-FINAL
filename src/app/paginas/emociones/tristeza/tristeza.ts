@@ -17,21 +17,35 @@ export class Tristeza implements AfterViewInit {
 
   elementos: any[] = [];
   numElementos = 40;
+  // REFERENCIAS PARA ELIMINAR EL AUDIO EN OTRAS PAGINAS
+  private clickHandler!: () => void;
+  private visibilityHandler!: () => void;
+  private resizeHandler!: () => void;
 
   ngAfterViewInit(): void {
     this.iniciarCanvas();
     this.iniciarAudio();
   }
+  /*AUDIO */
+  volumen: number = 0.3;
 
+  cambiarVolumen(event: any) {
+    const nuevoVolumen = parseFloat(event.target.value);
+    this.volumen = nuevoVolumen;
+
+    if (this.audioRef) {
+      this.audioRef.nativeElement.volume = nuevoVolumen;
+    }
+  }
   iniciarAudio() {
     const audio = this.audioRef.nativeElement;
-    audio.volume = 1; // 👈 volumen suave (0.0 a 1.0)
+    audio.volume = this.volumen;
 
-    // 👈 el navegador bloquea audio sin interacción del usuario
-    // se activa con el primer click en la página
-    document.addEventListener('click', () => {
+    this.clickHandler = () => {
       audio.play().catch(() => {});
-    }, { once: true }); // 👈 once:true para que solo se ejecute una vez
+    };
+
+    document.addEventListener('click', this.clickHandler, { once: true });
   }
   iniciarCanvas() {
     const canvas = this.canvasRef.nativeElement;
@@ -85,5 +99,17 @@ export class Tristeza implements AfterViewInit {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+  }
+  // 👈 se ejecuta al salir de la página
+  ngOnDestroy(): void {
+    const audio = this.audioRef?.nativeElement;
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0; // 👈 reinicia el audio
+    }
+
+    document.removeEventListener('click', this.clickHandler);
+    document.removeEventListener('visibilitychange', this.visibilityHandler);
+    window.removeEventListener('resize', this.resizeHandler);
   }
 }

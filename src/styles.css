@@ -30,7 +30,16 @@ body.pagina-miedo {
     color: white;
 }
 
+body.pagina-confianza {
+    margin:0;
+    min-height:100vh;
 
+    background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("assets/images/Confianza02.jpg") center/cover no-repeat fixed;
+
+    color:white;
+}
 
 
 

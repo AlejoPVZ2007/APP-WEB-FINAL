@@ -8,10 +8,11 @@ import { Nostalgia } from './paginas/emociones/nostalgia/nostalgia';
 import { Calma } from './paginas/emociones/calma/calma';
 import { Amor } from './paginas/emociones/amor/amor';
 import { Sorpresa } from './paginas/emociones/sorpresa/sorpresa';
-import { Confianza } from './paginas/emociones/confianza/confianza';
+
 import { Tristeza } from './paginas/emociones/tristeza/tristeza';
 import { Miedo } from './paginas/emociones/miedo/miedo';
 import { Enojo } from './paginas/emociones/enojo/enojo';
+import { Confianza } from './paginas/emociones/confianza/confianza';
 
 
 

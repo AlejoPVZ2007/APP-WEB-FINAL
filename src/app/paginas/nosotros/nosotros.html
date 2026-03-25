@@ -1,1 +1,201 @@
-<p>nosotros works!</p>
+<!-- ================================================================
+     HERO NOSOTROS
+================================================================ -->
+<section class="nos-hero">
+  <div class="nos-hero-overlay"></div>
+  <div class="container nos-hero-content">
+    <span class="nos-eyebrow">Conócenos</span>
+    <h1 class="nos-hero-titulo">Somos el equipo detrás de<br><em>Tus Emociones</em></h1>
+    <p class="nos-hero-sub">Un grupo apasionado por la salud mental y el bienestar emocional. Creemos que entender lo que sientes es el primer paso para transformar tu vida.</p>
+  </div>
+</section>
+
+<!-- ================================================================
+     MISIÓN Y VISIÓN
+================================================================ -->
+<section class="nos-mision">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="mv-card">
+          <div class="mv-icono">🎯</div>
+          <h2 class="mv-titulo">Nuestra Misión</h2>
+          <p class="mv-texto">Brindar un espacio seguro y accesible donde las personas puedan explorar, comprender y gestionar sus emociones a través de contenido basado en ciencia y compasión.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mv-card destacada">
+          <div class="mv-icono">🌟</div>
+          <h2 class="mv-titulo">Nuestra Visión</h2>
+          <p class="mv-texto">Ser la plataforma de referencia en inteligencia emocional en Latinoamérica, ayudando a miles de personas a vivir con mayor consciencia y bienestar interior.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     EQUIPO
+================================================================ -->
+<section class="nos-equipo">
+  <div class="container">
+
+    <header class="sec-header text-center">
+      <span class="nos-eyebrow">Nuestro equipo</span>
+      <h2 class="nos-sec-titulo">Las personas detrás del proyecto</h2>
+      <p class="nos-sec-sub">Cada uno aporta su pasión y talento para hacer de este proyecto una realidad.</p>
+    </header>
+<div class="equipo-grid">
+  <div class="miembro-card" *ngFor="let m of equipo">
+
+    <!-- Foto -->
+    <div class="miembro-img-wrap">
+      <img [src]="m.foto" [alt]="m.nombre" class="miembro-foto">
+      <div class="miembro-overlay"></div>
+    </div>
+
+    <!-- Info -->
+    <div class="miembro-info">
+      <h3 class="miembro-nombre">{{ m.nombre }}</h3>
+      <span class="miembro-rol">{{ m.rol }}</span>
+      <p class="miembro-bio">{{ m.bio }}</p>
+      <div class="miembro-redes">
+        <a *ngIf="m.linkedin"  [href]="m.linkedin"  target="_blank" class="red-btn red-li" title="LinkedIn">in</a>
+        <a *ngIf="m.github"    [href]="m.github"    target="_blank" class="red-btn red-gh" title="GitHub">gh</a>
+        <a *ngIf="m.instagram" [href]="m.instagram" target="_blank" class="red-btn red-ig" title="Instagram">ig</a>
+        <a *ngIf="m.tiktok"    [href]="m.tiktok"    target="_blank" class="red-btn red-tt" title="TikTok">tt</a>
+        <a *ngIf="m.facebook"  [href]="m.facebook"  target="_blank" class="red-btn red-fb" title="Facebook">fb</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- ================================================================
+     BENEFICIOS
+================================================================ -->
+<section class="nos-beneficios">
+  <div class="container">
+
+    <header class="sec-header text-center">
+      <span class="nos-eyebrow claro">¿Por qué elegirnos?</span>
+      <h2 class="nos-sec-titulo claro">Beneficios de nuestra plataforma</h2>
+    </header>
+
+    <div class="row g-4 mt-2">
+      <div class="col-md-3 col-sm-6" *ngFor="let b of beneficios">
+        <div class="ben-item">
+          <div class="ben-num">{{ b.num }}</div>
+          <h4 class="ben-titulo">{{ b.titulo }}</h4>
+          <p class="ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     SERVICIOS
+================================================================ -->
+<section class="nos-servicios">
+  <div class="container">
+
+    <header class="sec-header text-center">
+      <span class="nos-eyebrow">Lo que ofrecemos</span>
+      <h2 class="nos-sec-titulo">Nuestros servicios</h2>
+    </header>
+
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let s of servicios">
+        <div class="servicio-card">
+          <div class="servicio-icono">{{ s.icono }}</div>
+          <h4 class="servicio-titulo">{{ s.titulo }}</h4>
+          <p class="servicio-texto">{{ s.texto }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     CONTACTO
+================================================================ -->
+<section class="nos-contacto">
+  <div class="container">
+
+    <div class="row g-5 align-items-center">
+
+      <!-- Info -->
+      <div class="col-md-5">
+        <span class="nos-eyebrow">Escríbenos</span>
+        <h2 class="nos-sec-titulo" style="margin-top:0.75rem">¿Tienes alguna pregunta?</h2>
+        <p class="nos-sec-sub">Estamos aquí para ayudarte. Completa el formulario y te responderemos a la brevedad.</p>
+
+        <div class="contacto-datos">
+          <div class="dato-item">
+            <span class="dato-icono">📧</span>
+            <span class="dato-txt">contacto&#64;tusemociones.com</span>
+          </div>
+          <div class="dato-item">
+            <span class="dato-icono">📍</span>
+            <span class="dato-txt">Lima, Perú</span>
+          </div>
+          <div class="dato-item">
+            <span class="dato-icono">📱</span>
+            <span class="dato-txt">+51 999 234 980</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="col-md-7">
+        <div class="contacto-form">
+
+          <div class="exito-msg" *ngIf="enviado">
+            <span>✅</span> ¡Mensaje enviado! Te responderemos pronto.
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-lbl">Nombre</label>
+              <input class="form-inp" type="text" placeholder="Tu nombre"
+                     [(ngModel)]="contacto.nombre">
+            </div>
+            <div class="form-field">
+              <label class="form-lbl">Correo</label>
+              <input class="form-inp" type="email" placeholder="tu@correo.com"
+                     [(ngModel)]="contacto.email">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-lbl">Asunto</label>
+            <input class="form-inp" type="text" placeholder="¿En qué podemos ayudarte?"
+                   [(ngModel)]="contacto.asunto">
+          </div>
+
+          <div class="form-field">
+            <label class="form-lbl">Mensaje</label>
+            <textarea class="form-inp form-textarea" rows="5"
+                      placeholder="Escribe tu mensaje aquí..."
+                      [(ngModel)]="contacto.mensaje"></textarea>
+          </div>
+
+          <button class="form-btn" (click)="enviarMensaje()" [disabled]="enviando">
+            <span *ngIf="!enviando">Enviar mensaje →</span>
+            <span *ngIf="enviando" class="form-spinner"></span>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

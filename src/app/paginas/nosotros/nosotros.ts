@@ -18,7 +18,7 @@ export class Nosotros {
       rol:       'Líder del proyecto',
       bio:       'Apasionada por la psicología y el desarrollo web. Coordina el equipo y la visión del proyecto.',
       foto:      'assets/images/Jhordy.png',
-      linkedin:  'https://linkedin.com',
+      linkedin:  'https://www.linkedin.com/in/jhordy-albujar-ponte-4b3299354?utm_source=share_via&utm_content=profile&utm_medium=member_android',
       github:    'https://github.com/Jhordy-dev25',
       instagram: '',
       tiktok:    '',

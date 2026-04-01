@@ -1,154 +1,246 @@
-<!-- Canvas FUERA y ANTES de todo -->
-<canvas #canvasLluvia class="canvas-tristeza"></canvas>
+<!-- HERO -->
+<section class="tris-hero">
+  <div class="tris-hero-overlay"></div>
+  <img src="assets/images/tristeza3.jpeg" alt="Tristeza" class="tris-hero-img">
+  <div class="container tris-hero-content">
+    <span class="tris-eyebrow">😢 Emoción</span>
+    <h1 class="tris-hero-titulo">Tristeza</h1>
+    <p class="tris-hero-sub">Una emoción profunda que nos invita a sanar, reflexionar y reconectar con lo que verdaderamente importa.</p>
+  </div>
+</section>
 
-<audio #audioLluvia loop>
-  <source src="assets/sonido/sad1.mp3" type="audio/mpeg" />
-</audio>
-
-<div class="tristeza-body">
-  <!-- Inicio -->
-  <div class="container" id="textoInicioTristeza">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="text-center">¿Te sientes triste?</h1>
-        <p class="lead text-center">
-          La tristeza nos invita a detenernos, sentir y sanar poco a poco.
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
+<!-- DEFINICIÓN -->
+<section class="tris-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
       <div class="col-md-6">
-        <img
-          src="assets/images/tristeza1.jpg"
-          alt="Tristeza"
-          class="img-fluid rounded img-tristeza"
-        />
-      </div>
-      <div class="col-md-4" id="textoDescripcionTristeza">
-        <p>
-          La tristeza es una emoción natural que aparece cuando algo importante cambia o se pierde.
-          Nos permite procesar lo que sentimos y entendernos mejor.
-        </p>
-        <p>
-          Aunque a veces duela, también es una oportunidad para crecer, reflexionar y reconectar con
-          nosotros mismos.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Formulario -->
-  <div class="container mt-3 mb-3">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-sm-10 col-12">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <div class="mb-3">
-              <textarea
-                class="form-control custom-textarea"
-                rows="3"
-                placeholder="Escribe lo que sientes… no estás solo."
-              ></textarea>
-            </div>
-            <button class="btn btn-primary">Publicar</button>
+        <span class="tris-eyebrow">¿Qué es?</span>
+        <h2 class="tris-titulo">La tristeza como proceso de sanación</h2>
+        <p class="tris-texto">La tristeza es una de las emociones más honestas del ser humano. Lejos de ser una debilidad, es una señal que algo importante ha sucedido: una pérdida, un cambio o una decepción que merece ser procesada.</p>
+        <p class="tris-texto">La psicología reconoce la tristeza como una emoción <strong>necesaria y adaptativa</strong>. Nos permite <strong>elaborar pérdidas</strong>, <strong>encontrar significado</strong> en el dolor y <strong>reconectar</strong> con nuestros valores más profundos.</p>
+        <div class="tris-stats">
+          <div class="tris-stat">
+            <span class="tris-stat-n">+60%</span>
+            <span class="tris-stat-l">Más empatía</span>
           </div>
+          <div class="tris-stat">
+            <span class="tris-stat-n">3x</span>
+            <span class="tris-stat-l">Mayor reflexión</span>
+          </div>
+          <div class="tris-stat">
+            <span class="tris-stat-n">+80%</span>
+            <span class="tris-stat-l">Más autoconocimiento</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tris-def-img-wrap">
+          <img src="assets/images/tristeza1.jpg" alt="Tristeza" class="tris-def-img">
+          <div class="tris-def-badge">😢</div>
         </div>
       </div>
     </div>
   </div>
-  <div class="control-volumen-tristeza">
-    <label for="volumenTristeza"> </label>
-    <input
-      id="volumenTristeza"
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      [value]="volumen"
-      (input)="cambiarVolumen($event)"
-    />
-    <small>{{ volumen * 100 | number: '1.0-0' }}%</small>
-  </div>
-  <!-- Comentarios -->
-  <div id="fondocomentariosTristeza">
-    <div class="container py-4">
-      <h4 class="mb-3">Comentarios recientes</h4>
+</section>
 
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h6 class="fw-bold">Usuario123</h6>
-          <p class="mb-1">Hoy me siento un poco vacío...</p>
-          <small class="text-muted">Hace 2 minutos</small>
-        </div>
-        <button class="btn btn-primary">Comentar</button>
-      </div>
-
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h6 class="fw-bold">Ana</h6>
-          <p class="mb-1">A veces solo quiero llorar y no sé por qué.</p>
-          <small class="text-muted">Hace 10 minutos</small>
-        </div>
-        <button class="btn btn-primary">Comentar</button>
-      </div>
+<!-- CARACTERÍSTICAS -->
+<section class="tris-seccion tris-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="tris-eyebrow">Sus rasgos</span>
+      <h2 class="tris-titulo claro">Características de la tristeza</h2>
+      <p class="tris-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
     </div>
-  </div>
-
-  <!-- Frases -->
-  <div id="fondofrasesTristeza">
-    <div class="container py-4" id="frasesTristeza">
-      <h4 class="text-center py-3">Frases del día</h4>
-
-      <div class="row justify-content-center align-items-stretch">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"Está bien no estar bien todo el tiempo."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"Incluso los días grises forman parte del camino."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"Llorar también es una forma de sanar."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"Después de la tormenta, siempre llega la calma."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"No estás solo, aunque a veces lo parezca."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"Sanar toma tiempo, sé paciente contigo mismo."</p>
-            </div>
-          </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="tris-card">
+          <div class="tris-card-icono">{{ c.icono }}</div>
+          <h4 class="tris-card-titulo">{{ c.titulo }}</h4>
+          <p class="tris-card-texto">{{ c.texto }}</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- CÓMO DESARROLLARLO -->
+<section class="tris-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="tris-eyebrow">Transfórmala</span>
+      <h2 class="tris-titulo">¿Cómo atravesar la tristeza?</h2>
+      <p class="tris-subtitulo">Pasos concretos para procesar esta emoción de forma saludable</p>
+    </div>
+    <div class="tris-pasos">
+      <div class="tris-paso" *ngFor="let p of pasos; let i = index">
+        <div class="tris-paso-num">{{ i + 1 }}</div>
+        <div class="tris-paso-info">
+          <h4 class="tris-paso-titulo">{{ p.titulo }}</h4>
+          <p class="tris-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="tris-seccion tris-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="tris-eyebrow">¿Por qué importa?</span>
+      <h2 class="tris-titulo claro">Lo que la tristeza nos enseña</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="tris-ben">
+          <div class="tris-ben-icono">{{ b.icono }}</div>
+          <h4 class="tris-ben-titulo">{{ b.titulo }}</h4>
+          <p class="tris-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="tris-seccion tris-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="tris-eyebrow claro">Reflexión</span>
+      <h2 class="tris-titulo claro">Frases sobre la tristeza</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="tris-cita-card">
+          <span class="tris-comilla">"</span>
+          <p class="tris-cita-texto">{{ c.frase }}</p>
+          <span class="tris-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="tris-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="tris-eyebrow">Ponlo en práctica</span>
+      <h2 class="tris-titulo">Actividades para procesar la tristeza</h2>
+      <p class="tris-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="tris-actividad">
+          <div class="tris-act-header">
+            <span class="tris-act-icono">{{ a.icono }}</span>
+            <h4 class="tris-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="tris-act-texto">{{ a.texto }}</p>
+          <span class="tris-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="tris-seccion tris-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="tris-eyebrow">Tu opinión</span>
+      <h2 class="tris-titulo claro">Comentarios y calificación</h2>
+      <p class="tris-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text"
+                   placeholder="¿Cómo te llamas?"
+                   [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Cómo vives la tristeza? ¿Qué aprendiste de ella?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en compartir tu experiencia con esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</section>

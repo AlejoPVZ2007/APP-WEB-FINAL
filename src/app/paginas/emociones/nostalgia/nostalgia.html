@@ -1,1 +1,246 @@
-<p>nostalgia works!</p>
+<!-- HERO -->
+<section class="nos-hero">
+  <div class="nos-hero-overlay"></div>
+  <img src="assets/images/Nostalgia.jpg" alt="Nostalgia" class="nos-hero-img">
+  <div class="container nos-hero-content">
+    <span class="nos-eyebrow">🌙 Emoción</span>
+    <h1 class="nos-hero-titulo">Nostalgia</h1>
+    <p class="nos-hero-sub">El suave dolor de recordar lo que fue. Una emoción que nos conecta con nuestra historia y nos recuerda quiénes somos.</p>
+  </div>
+</section>
+
+<!-- DEFINICIÓN -->
+<section class="nos-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="nos-eyebrow">¿Qué es?</span>
+        <h2 class="nos-titulo">La nostalgia como puente al pasado</h2>
+        <p class="nos-texto">La nostalgia es una emoción compleja y agridulce que surge al recordar momentos, personas o lugares del pasado con una mezcla de afecto y melancolía. No es solo tristeza: es una forma de amor hacia lo que ya fue.</p>
+        <p class="nos-texto">La psicología moderna la reconoce como una emoción <strong>mayormente positiva</strong>: fortalece la identidad personal, mejora el estado de ánimo y nos conecta con un sentido de <strong>continuidad</strong> y <strong>pertenencia</strong> a través del tiempo.</p>
+        <div class="nos-stats">
+          <div class="nos-stat">
+            <span class="nos-stat-n">79%</span>
+            <span class="nos-stat-l">La sienten semanal</span>
+          </div>
+          <div class="nos-stat">
+            <span class="nos-stat-n">+2x</span>
+            <span class="nos-stat-l">Más conexión social</span>
+          </div>
+          <div class="nos-stat">
+            <span class="nos-stat-n">+40%</span>
+            <span class="nos-stat-l">Más autoestima</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="nos-def-img-wrap">
+          <img src="assets/images/Nostalgia1.jpeg" alt="Nostalgia" class="nos-def-img">
+          <div class="nos-def-badge">🌙</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section class="nos-seccion nos-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="nos-eyebrow">Sus rasgos</span>
+      <h2 class="nos-titulo claro">Características de la nostalgia</h2>
+      <p class="nos-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="nos-card">
+          <div class="nos-card-icono">{{ c.icono }}</div>
+          <h4 class="nos-card-titulo">{{ c.titulo }}</h4>
+          <p class="nos-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO VIVIRLA SANAMENTE -->
+<section class="nos-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="nos-eyebrow">Vívela bien</span>
+      <h2 class="nos-titulo">¿Cómo vivir la nostalgia sanamente?</h2>
+      <p class="nos-subtitulo">Pasos concretos para honrar el pasado sin perderte en él</p>
+    </div>
+    <div class="nos-pasos">
+      <div class="nos-paso" *ngFor="let p of pasos; let i = index">
+        <div class="nos-paso-num">{{ i + 1 }}</div>
+        <div class="nos-paso-info">
+          <h4 class="nos-paso-titulo">{{ p.titulo }}</h4>
+          <p class="nos-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="nos-seccion nos-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="nos-eyebrow">¿Por qué importa?</span>
+      <h2 class="nos-titulo claro">Lo que la nostalgia nos regala</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="nos-ben">
+          <div class="nos-ben-icono">{{ b.icono }}</div>
+          <h4 class="nos-ben-titulo">{{ b.titulo }}</h4>
+          <p class="nos-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="nos-seccion nos-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="nos-eyebrow claro">Inspiración</span>
+      <h2 class="nos-titulo claro">Frases sobre la nostalgia</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="nos-cita-card">
+          <span class="nos-comilla">"</span>
+          <p class="nos-cita-texto">{{ c.frase }}</p>
+          <span class="nos-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="nos-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="nos-eyebrow">Ponla en práctica</span>
+      <h2 class="nos-titulo">Actividades para honrar la nostalgia</h2>
+      <p class="nos-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="nos-actividad">
+          <div class="nos-act-header">
+            <span class="nos-act-icono">{{ a.icono }}</span>
+            <h4 class="nos-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="nos-act-texto">{{ a.texto }}</p>
+          <span class="nos-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="nos-seccion nos-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="nos-eyebrow">Tu opinión</span>
+      <h2 class="nos-titulo claro">Comentarios y calificación</h2>
+      <p class="nos-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text"
+                   placeholder="¿Cómo te llamas?"
+                   [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Qué piensas sobre la nostalgia? ¿Cómo te identificas con esta emoción?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en comentar sobre esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,1 +1,246 @@
-<p>sorpresa works!</p>
+<!-- HERO -->
+<section class="sor-hero">
+  <div class="sor-hero-overlay"></div>
+  <img src="assets/images/Sorpresa.jpg" alt="Sorpresa" class="sor-hero-img">
+  <div class="container sor-hero-content">
+    <span class="sor-eyebrow">🤩 Emoción</span>
+    <h1 class="sor-hero-titulo">Sorpresa</h1>
+    <p class="sor-hero-sub">La emoción más breve y más poderosa. En un instante nos saca del piloto automático y nos devuelve al presente con todos los sentidos despiertos.</p>
+  </div>
+</section>
+
+<!-- DEFINICIÓN -->
+<section class="sor-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="sor-eyebrow">¿Qué es?</span>
+        <h2 class="sor-titulo">La sorpresa como interruptor emocional</h2>
+        <p class="sor-texto">La sorpresa es una emoción breve e intensa que surge cuando algo ocurre de manera inesperada, rompiendo nuestras expectativas sobre lo que debería pasar. A diferencia de otras emociones, la sorpresa en sí misma no es positiva ni negativa: es un estado de apertura total.</p>
+        <p class="sor-texto">La psicología la reconoce como la emoción <strong>más corta de todas</strong>: dura apenas segundos antes de convertirse en otra emoción. Su función es detener lo que hacemos y <strong>redirigir toda nuestra atención</strong> hacia lo inesperado.</p>
+        <div class="sor-stats">
+          <div class="sor-stat">
+            <span class="sor-stat-n">&lt;1s</span>
+            <span class="sor-stat-l">Duración media</span>
+          </div>
+          <div class="sor-stat">
+            <span class="sor-stat-n">100%</span>
+            <span class="sor-stat-l">Atención plena</span>
+          </div>
+          <div class="sor-stat">
+            <span class="sor-stat-n">+3x</span>
+            <span class="sor-stat-l">Más memoria</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="sor-def-img-wrap">
+          <img src="assets/images/Sorpresa1.jpg" alt="Sorpresa" class="sor-def-img">
+          <div class="sor-def-badge">🤩</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section class="sor-seccion sor-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="sor-eyebrow">Sus rasgos</span>
+      <h2 class="sor-titulo claro">Características de la sorpresa</h2>
+      <p class="sor-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="sor-card">
+          <div class="sor-card-icono">{{ c.icono }}</div>
+          <h4 class="sor-card-titulo">{{ c.titulo }}</h4>
+          <p class="sor-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO CULTIVARLA -->
+<section class="sor-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="sor-eyebrow">Ábrele la puerta</span>
+      <h2 class="sor-titulo">¿Cómo cultivar la sorpresa en tu vida?</h2>
+      <p class="sor-subtitulo">Pasos concretos para romper la rutina y despertar lo inesperado</p>
+    </div>
+    <div class="sor-pasos">
+      <div class="sor-paso" *ngFor="let p of pasos; let i = index">
+        <div class="sor-paso-num">{{ i + 1 }}</div>
+        <div class="sor-paso-info">
+          <h4 class="sor-paso-titulo">{{ p.titulo }}</h4>
+          <p class="sor-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="sor-seccion sor-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="sor-eyebrow">¿Por qué importa?</span>
+      <h2 class="sor-titulo claro">Lo que la sorpresa nos regala</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="sor-ben">
+          <div class="sor-ben-icono">{{ b.icono }}</div>
+          <h4 class="sor-ben-titulo">{{ b.titulo }}</h4>
+          <p class="sor-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="sor-seccion sor-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="sor-eyebrow claro">Inspiración</span>
+      <h2 class="sor-titulo claro">Frases sobre la sorpresa</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="sor-cita-card">
+          <span class="sor-comilla">"</span>
+          <p class="sor-cita-texto">{{ c.frase }}</p>
+          <span class="sor-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="sor-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="sor-eyebrow">Ponla en práctica</span>
+      <h2 class="sor-titulo">Actividades para cultivar la sorpresa</h2>
+      <p class="sor-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="sor-actividad">
+          <div class="sor-act-header">
+            <span class="sor-act-icono">{{ a.icono }}</span>
+            <h4 class="sor-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="sor-act-texto">{{ a.texto }}</p>
+          <span class="sor-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="sor-seccion sor-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="sor-eyebrow">Tu opinión</span>
+      <h2 class="sor-titulo claro">Comentarios y calificación</h2>
+      <p class="sor-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text"
+                   placeholder="¿Cómo te llamas?"
+                   [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Qué piensas sobre la sorpresa? ¿Cómo te identificas con esta emoción?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en comentar sobre esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</section>

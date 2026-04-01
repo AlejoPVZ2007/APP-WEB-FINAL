@@ -1,59 +1,246 @@
-<canvas #canvasLluvia id="lluvia"></canvas>
-
-<div class="container mt-5">
-  <div class="text-center mb-4">
-    <h1>¿Tienes miedo?</h1>
-    <p>Compártenos lo que sientes hoy</p>
+<!-- HERO -->
+<section class="mie-hero">
+  <div class="mie-hero-overlay"></div>
+  <img src="assets/images/fondomiedo.jpg" alt="Miedo" class="mie-hero-img">
+  <div class="container mie-hero-content">
+    <span class="mie-eyebrow">😨 Emoción</span>
+    <h1 class="mie-hero-titulo">Miedo</h1>
+    <p class="mie-hero-sub">Una de las emociones más antiguas del ser humano. Nos protege, nos alerta y, cuando lo entendemos, se convierte en una guía poderosa.</p>
   </div>
+</section>
 
-  <!-- FORMULARIO -->
-  <div class="card mb-4 shadow">
-    <div class="card-body">
-      <form (submit)="publicar($event)">
-        <textarea class="form-control" 
-          [(ngModel)]="mensaje"
-          name="mensaje"
-          placeholder="Escribe lo que sientes… no estás solo"></textarea>
-        <button class="btn btn-warning mt-2">Publicar</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- COMENTARIOS -->
-  <h4 class="mb-3">Comentarios recientes</h4>
-  <div *ngFor="let c of comentarios" class="card mb-3 shadow-sm">
-    <div class="card-body">
-      <h6 class="fw-bold">{{c.usuario}}</h6>
-      <p>{{c.texto}}</p>
-      <small class="text-muted">{{c.tiempo}}</small>
-    </div>
-  </div>
-</div>
-
-<!-- FRASES -->
-<div class="container my-4">
-  <h4 class="text-center mb-4">Frases del Día</h4>
-  <div class="row justify-content-center">
-    <div class="col-md-4 mb-4" *ngFor="let f of frases">
-      <div class="card frase-card shadow" (click)="abrirFrase(f)" style="cursor:pointer;">
-        <div class="card-body text-center">
-          <span class="frase-icon">👻</span>
+<!-- DEFINICIÓN -->
+<section class="mie-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="mie-eyebrow">¿Qué es?</span>
+        <h2 class="mie-titulo">El miedo como señal de vida</h2>
+        <p class="mie-texto">El miedo es una respuesta emocional y fisiológica ante una amenaza percibida, real o imaginaria. Es una de las emociones más primitivas y universales: todos los seres humanos lo experimentamos, independientemente de la cultura o el contexto.</p>
+        <p class="mie-texto">La psicología distingue entre el <strong>miedo adaptativo</strong>, que nos protege del peligro real, el <strong>miedo anticipatorio</strong>, que surge antes de que ocurra algo, y el <strong>miedo aprendido</strong>, que se desarrolla por experiencias pasadas o por lo que hemos observado en otros.</p>
+        <div class="mie-stats">
+          <div class="mie-stat">
+            <span class="mie-stat-n">100%</span>
+            <span class="mie-stat-l">Universal</span>
+          </div>
+          <div class="mie-stat">
+            <span class="mie-stat-n">0.1s</span>
+            <span class="mie-stat-l">Reacción amígdala</span>
+          </div>
+          <div class="mie-stat">
+            <span class="mie-stat-n">+30%</span>
+            <span class="mie-stat-l">Más alerta</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mie-def-img-wrap">
+          <img src="assets/images/Miedo1.jpg" alt="Miedo" class="mie-def-img">
+          <div class="mie-def-badge">😨</div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- MODAL -->
-<div class="modal-overlay" *ngIf="fraseSeleccionada" (click)="cerrarFrase()">
-  <div class="modal-frase" (click)="$event.stopPropagation()">
-    <span class="modal-icon">👻</span>
-    <p>{{fraseSeleccionada}}</p>
-    <button class="btn btn-warning mt-3" (click)="cerrarFrase()">Cerrar</button>
+<!-- CARACTERÍSTICAS -->
+<section class="mie-seccion mie-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="mie-eyebrow">Sus rasgos</span>
+      <h2 class="mie-titulo claro">Características del miedo</h2>
+      <p class="mie-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="mie-card">
+          <div class="mie-card-icono">{{ c.icono }}</div>
+          <h4 class="mie-card-titulo">{{ c.titulo }}</h4>
+          <p class="mie-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- AUDIO -->
-<audio #audioFondo loop>
-  <source src="assets/audio/fondo_miedo.mp3" type="audio/mpeg">
-</audio>
+<!-- CÓMO GESTIONARLO -->
+<section class="mie-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="mie-eyebrow">Gestiónalo</span>
+      <h2 class="mie-titulo">¿Cómo gestionar el miedo?</h2>
+      <p class="mie-subtitulo">Pasos concretos para enfrentar el miedo y convertirlo en fortaleza</p>
+    </div>
+    <div class="mie-pasos">
+      <div class="mie-paso" *ngFor="let p of pasos; let i = index">
+        <div class="mie-paso-num">{{ i + 1 }}</div>
+        <div class="mie-paso-info">
+          <h4 class="mie-paso-titulo">{{ p.titulo }}</h4>
+          <p class="mie-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="mie-seccion mie-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="mie-eyebrow">¿Por qué importa?</span>
+      <h2 class="mie-titulo claro">Lo que el miedo nos enseña</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="mie-ben">
+          <div class="mie-ben-icono">{{ b.icono }}</div>
+          <h4 class="mie-ben-titulo">{{ b.titulo }}</h4>
+          <p class="mie-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="mie-seccion mie-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="mie-eyebrow claro">Inspiración</span>
+      <h2 class="mie-titulo claro">Frases sobre el miedo</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="mie-cita-card">
+          <span class="mie-comilla">"</span>
+          <p class="mie-cita-texto">{{ c.frase }}</p>
+          <span class="mie-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="mie-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="mie-eyebrow">Ponlo en práctica</span>
+      <h2 class="mie-titulo">Actividades para gestionar el miedo</h2>
+      <p class="mie-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="mie-actividad">
+          <div class="mie-act-header">
+            <span class="mie-act-icono">{{ a.icono }}</span>
+            <h4 class="mie-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="mie-act-texto">{{ a.texto }}</p>
+          <span class="mie-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="mie-seccion mie-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="mie-eyebrow">Tu opinión</span>
+      <h2 class="mie-titulo claro">Comentarios y calificación</h2>
+      <p class="mie-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span *ngFor="let e of estrellasArray"
+                class="com-estrella-icon"
+                [class.activa]="e <= promedioEstrellas">★</span>
+        </div>
+        <span class="com-total">{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">
+            ✅ ¡Gracias por tu comentario!
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input class="com-input" type="text"
+                   placeholder="¿Cómo te llamas?"
+                   [(ngModel)]="nuevoComentario.nombre">
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span *ngFor="let e of estrellasArray"
+                    class="com-estrella"
+                    [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                    (mouseenter)="estrellasHover = e"
+                    (mouseleave)="estrellasHover = 0"
+                    (click)="setEstrellas(e)">★</span>
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea class="com-input com-textarea" rows="4"
+                      placeholder="¿Qué piensas sobre el miedo? ¿Cómo te identificas con esta emoción?"
+                      [(ngModel)]="nuevoComentario.texto"></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span *ngFor="let e of estrellasArray"
+                      class="com-estrella-icon"
+                      [class.activa]="e <= c.estrellas">★</span>
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en comentar sobre esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</section>

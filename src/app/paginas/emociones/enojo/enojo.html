@@ -1,154 +1,270 @@
-<!-- Canvas FUERA y ANTES de todo -->
-<canvas #canvasFuego class="canvas-enojo"></canvas>
+<!-- HERO -->
+<section class="eno-hero">
+  <div class="eno-hero-overlay"></div>
+  <img src="assets/images/ira3.jpg" alt="Enojo" class="eno-hero-img" />
+  <div class="container eno-hero-content">
+    <span class="eno-eyebrow">😤 Emoción</span>
+    <h1 class="eno-hero-titulo">Enojo</h1>
+    <p class="eno-hero-sub">
+      Una emoción poderosa que nos enseña a defender nuestros límites, transformar injusticias y
+      conocernos más profundamente.
+    </p>
+  </div>
+</section>
 
-<audio #audioFuego loop>
-  <source src="assets/sonido/enojo1.mp3" type="audio/mpeg" />
-</audio>
-
-<div class="enojo-body">
-  <!-- Inicio -->
-  <div class="container" id="textoInicioEnojo">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="text-center">¿Te sientes enojado?</h1>
-        <p class="lead text-center">
-          El enojo es una emoción poderosa… aprender a controlarlo es tu mayor fortaleza.
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
+<!-- DEFINICIÓN -->
+<section class="eno-seccion" id="definicion">
+  <div class="container">
+    <div class="row align-items-center g-5">
       <div class="col-md-6">
-        <div class="img-wrapper w-100">
-          <img src="assets/images/ira1.jpg" alt="Enojo" class="img-fluid rounded img-enojo" />
-        </div>
-      </div>
-      <div class="col-md-4" id="textoDescripcionEnojo">
-        <p>
-          El enojo aparece cuando sentimos injusticia, frustración o falta de control. Es natural,
-          pero mal gestionado puede dañarnos.
+        <span class="eno-eyebrow">¿Qué es?</span>
+        <h2 class="eno-titulo">El enojo como fuerza protectora</h2>
+        <p class="eno-texto">
+          El enojo es una emoción primaria que surge cuando percibimos una amenaza, injusticia o
+          violación de nuestros límites. Lejos de ser negativa, es una señal valiosa que nos indica
+          qué necesitamos proteger.
         </p>
-        <p>
-          Aprender a canalizarlo te permite transformar esa energía en algo positivo y constructivo.
+        <p class="eno-texto">
+          La psicología reconoce el enojo como una emoción <strong>adaptativa y necesaria</strong>.
+          Nos permite <strong>establecer límites</strong>,
+          <strong>defender nuestros derechos</strong> y <strong>movilizarnos</strong> ante
+          situaciones que requieren cambio.
         </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Formulario -->
-  <div class="container mt-3 mb-3">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-sm-10 col-12">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <div class="mb-3">
-              <textarea
-                class="form-control custom-textarea"
-                rows="3"
-                placeholder="Desahógate… escribe lo que te molesta."
-              ></textarea>
-            </div>
-            <button class="btn btn-danger">Publicar</button>
+        <div class="eno-stats">
+          <div class="eno-stat">
+            <span class="eno-stat-n">+50%</span>
+            <span class="eno-stat-l">Mejores límites</span>
+          </div>
+          <div class="eno-stat">
+            <span class="eno-stat-n">4x</span>
+            <span class="eno-stat-l">Más asertividad</span>
+          </div>
+          <div class="eno-stat">
+            <span class="eno-stat-n">+70%</span>
+            <span class="eno-stat-l">Más autodefensa</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- CONTROL DE AUDIO-->
-  <div class="control-volumen">
-  <label for="volumen"></label>
-  <input
-    id="volumen"
-    type="range"
-    min="0"
-    max="1"
-    step="0.01"
-    [value]="volumen"
-    (input)="cambiarVolumen($event)"
-  />
-  <small>{{ (volumen * 100) | number:'1.0-0' }}%</small>
-</div>
-  <!-- Comentarios -->
-  <div id="fondocomentariosEnojo">
-    <div class="container py-4">
-      <h4 class="mb-3">Comentarios recientes</h4>
-
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h6 class="fw-bold">Usuario123</h6>
-          <p class="mb-1">Hoy todo me irrita… no sé por qué.</p>
-          <small class="text-muted">Hace 2 minutos</small>
-        </div>
-        <button class="btn btn-danger">Comentar</button>
-      </div>
-
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h6 class="fw-bold">Carlos</h6>
-          <p class="mb-1">Siento que voy a explotar con todo.</p>
-          <small class="text-muted">Hace 10 minutos</small>
-        </div>
-        <button class="btn btn-danger">Comentar</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Frases -->
-  <div id="fondofrasesEnojo">
-    <div class="container py-4" id="frasesEnojo">
-      <h4 class="text-center py-3">Frases del día</h4>
-
-      <div class="row justify-content-center align-items-stretch">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"No dejes que tu enojo controle tus decisiones."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">
-                "Respira… lo que hoy te molesta mañana no será tan importante."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"El control de tu mente es más fuerte que cualquier impulso."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"La calma es una victoria sobre el enojo."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"No todo merece tu energía ni tu reacción."</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">"Dominar tu enojo es dominarte a ti mismo."</p>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="eno-def-img-wrap">
+          <img src="assets/images/ira1.jpg" alt="Enojo" class="eno-def-img" />
+          <div class="eno-def-badge">😤</div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section class="eno-seccion eno-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eno-eyebrow">Sus rasgos</span>
+      <h2 class="eno-titulo claro">Características del enojo</h2>
+      <p class="eno-subtitulo">Reconoce cómo se manifiesta esta emoción en tu vida</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of caracteristicas">
+        <div class="eno-card">
+          <div class="eno-card-icono">{{ c.icono }}</div>
+          <h4 class="eno-card-titulo">{{ c.titulo }}</h4>
+          <p class="eno-card-texto">{{ c.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO MANEJARLO -->
+<section class="eno-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eno-eyebrow">Canalízalo</span>
+      <h2 class="eno-titulo">¿Cómo manejar el enojo?</h2>
+      <p class="eno-subtitulo">Pasos concretos para expresar esta emoción de forma saludable</p>
+    </div>
+    <div class="eno-pasos">
+      <div class="eno-paso" *ngFor="let p of pasos; let i = index">
+        <div class="eno-paso-num">{{ i + 1 }}</div>
+        <div class="eno-paso-info">
+          <h4 class="eno-paso-titulo">{{ p.titulo }}</h4>
+          <p class="eno-paso-texto">{{ p.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="eno-seccion eno-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eno-eyebrow">¿Por qué importa?</span>
+      <h2 class="eno-titulo claro">Lo que el enojo nos enseña</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-3" *ngFor="let b of beneficios">
+        <div class="eno-ben">
+          <div class="eno-ben-icono">{{ b.icono }}</div>
+          <h4 class="eno-ben-titulo">{{ b.titulo }}</h4>
+          <p class="eno-ben-texto">{{ b.texto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="eno-seccion eno-citas">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eno-eyebrow claro">Reflexión</span>
+      <h2 class="eno-titulo claro">Frases sobre el enojo</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let c of citas">
+        <div class="eno-cita-card">
+          <span class="eno-comilla">"</span>
+          <p class="eno-cita-texto">{{ c.frase }}</p>
+          <span class="eno-cita-autor">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="eno-seccion">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eno-eyebrow">Ponlo en práctica</span>
+      <h2 class="eno-titulo">Actividades para canalizar el enojo</h2>
+      <p class="eno-subtitulo">Ejercicios simples que puedes hacer hoy mismo</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let a of actividades">
+        <div class="eno-actividad">
+          <div class="eno-act-header">
+            <span class="eno-act-icono">{{ a.icono }}</span>
+            <h4 class="eno-act-titulo">{{ a.titulo }}</h4>
+          </div>
+          <p class="eno-act-texto">{{ a.texto }}</p>
+          <span class="eno-act-tiempo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     COMENTARIOS Y CALIFICACIÓN
+================================================================ -->
+<section class="eno-seccion eno-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eno-eyebrow">Tu opinión</span>
+      <h2 class="eno-titulo claro">Comentarios y calificación</h2>
+      <p class="eno-subtitulo">¿Qué te pareció este contenido? Comparte tu experiencia</p>
+    </div>
+
+    <!-- Resumen de calificación -->
+    <div class="com-resumen" *ngIf="comentarios.length > 0">
+      <div class="com-promedio">
+        <span class="com-promedio-num">{{ promedioEstrellas }}</span>
+        <div class="com-estrellas-display">
+          <span
+            *ngFor="let e of estrellasArray"
+            class="com-estrella-icon"
+            [class.activa]="e <= promedioEstrellas"
+            >★</span
+          >
+        </div>
+        <span class="com-total"
+          >{{ comentarios.length }} comentario{{ comentarios.length !== 1 ? 's' : '' }}</span
+        >
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <!-- Formulario -->
+      <div class="col-md-5">
+        <div class="com-form">
+          <h4 class="com-form-titulo">Deja tu comentario</h4>
+
+          <div class="com-exito" *ngIf="comEnviado">✅ ¡Gracias por tu comentario!</div>
+
+          <div class="com-field">
+            <label class="com-label">Tu nombre</label>
+            <input
+              class="com-input"
+              type="text"
+              placeholder="¿Cómo te llamas?"
+              [(ngModel)]="nuevoComentario.nombre"
+            />
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Calificación</label>
+            <div class="com-estrellas-select">
+              <span
+                *ngFor="let e of estrellasArray"
+                class="com-estrella"
+                [class.activa]="e <= (estrellasHover || nuevoComentario.estrellas)"
+                (mouseenter)="estrellasHover = e"
+                (mouseleave)="estrellasHover = 0"
+                (click)="setEstrellas(e)"
+                >★</span
+              >
+            </div>
+          </div>
+
+          <div class="com-field">
+            <label class="com-label">Tu comentario</label>
+            <textarea
+              class="com-input com-textarea"
+              rows="4"
+              placeholder="¿Cómo vives el enojo? ¿Qué aprendiste de él?"
+              [(ngModel)]="nuevoComentario.texto"
+            ></textarea>
+          </div>
+
+          <button class="com-btn" (click)="agregarComentario()" [disabled]="enviandoCom">
+            <span *ngIf="!enviandoCom">Publicar comentario →</span>
+            <span *ngIf="enviandoCom" class="com-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de comentarios -->
+      <div class="col-md-7">
+        <div class="com-lista" *ngIf="comentarios.length > 0; else sinCom">
+          <div class="com-item" *ngFor="let c of comentarios">
+            <div class="com-avatar">{{ c.avatar }}</div>
+            <div class="com-contenido">
+              <div class="com-cabeza">
+                <span class="com-nombre">{{ c.nombre }}</span>
+                <span class="com-fecha">{{ c.fecha }}</span>
+              </div>
+              <div class="com-estrellas-display com-est-sm">
+                <span
+                  *ngFor="let e of estrellasArray"
+                  class="com-estrella-icon"
+                  [class.activa]="e <= c.estrellas"
+                  >★</span
+                >
+              </div>
+              <p class="com-texto">{{ c.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #sinCom>
+          <div class="com-vacio">
+            <span class="com-vacio-icono">💬</span>
+            <p>Sé el primero en compartir tu experiencia con esta emoción</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>

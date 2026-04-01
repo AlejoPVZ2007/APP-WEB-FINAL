@@ -259,38 +259,60 @@ body {
 .buscador-group {
   border-radius: 50px;
   overflow: hidden;
-  border: 2px solid var(--borde-oro);
-  background: var(--carbon-2);
+  border: 2px solid #e6c76a; /* amarillo suave */
+  background: #1f1f1f;
+  transition: all 0.3s ease;
 }
+
+/* efecto al pasar el mouse */
+.buscador-group:hover {
+  border-color: #f0d878;
+  box-shadow: 0 0 10px rgba(240, 216, 120, 0.3);
+}
+
 .buscador-icono {
-  background: var(--oro);
-  color: var(--negro);
+  background: linear-gradient(135deg, #e6c76a, #f5e6a3); /* degradado elegante */
+  color: #1a1a1a;
   border: none;
   padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .buscador-icono svg { 
   display: block; 
 }
 
 .buscador-input {
-  background: var(--carbon-2);
+  background: #262626;
   border: none;
-  border-left: 2px solid var(--borde-oro);
-  padding: 0.65rem 1rem;
+  border-left: 2px solid #e6c76a;
+  padding: 0.7rem 1rem;
   font-family: var(--f-cuerpo);
   font-size: 0.95rem;
-  color: var(--blanco);
+  color: #f5f5f5;
   outline: none;
-}
-.buscador-input:focus { 
-  background: var(--carbon-3); 
-  color: var(--blanco); 
-  box-shadow: none; 
+  transition: all 0.3s ease;
 }
 
+/* foco más elegante */
+.buscador-input:focus { 
+  background: #2e2e2e; 
+  color: #ffffff; 
+}
+
+/* placeholder más fino */
 .buscador-input::placeholder { 
-  color: var(--gris-3); 
+  color: #b8b8b8; 
   font-style: italic; 
+}
+
+/* animación suave al escribir */
+.buscador-input:focus + .buscador-icono,
+.buscador-group:focus-within {
+  border-color: #f5e6a3;
+  box-shadow: 0 0 12px rgba(245, 230, 163, 0.4);
 }
 
 /* Sin resultado */
@@ -441,41 +463,95 @@ body {
 /* ================================================================
    CTA BAND
 ================================================================ */
+/* =========================
+   SECCIÓN LIMPIA
+========================= */
 .cta-band {
-  background: var(--carbon-2);
-  border-top: 2px solid var(--borde-oro);
-  padding: 5rem 0;
-}
-.cta-titulo {
-  font-family: var(--f-titulo);
-  font-size: 2rem; font-weight: 700;
-  color: var(--blanco); margin-bottom: 0.75rem;
-}
-.cta-sub {
-  font-size: 1rem; color: var(--gris-1);
-  margin-bottom: 2rem; max-width: 480px;
-  margin-left: auto; margin-right: auto;
-  line-height: 1.7;
-}
-.btn-cta {
-  display: inline-block;
-  background: var(--negro);
-  color: var(--oro-texto);
-  border: 2px solid var(--oro);
-  font-family: var(--f-cuerpo);
-  font-size: 0.92rem; font-weight: 600;
-  padding: 0.75rem 2.2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  transition: background var(--t), color var(--t), transform var(--t);
-}
-.btn-cta:hover { 
-  background: var(--oro); 
-  color: var(--negro); 
-  transform: translateY(-2px); 
+  padding: 4rem 1.5rem;
 }
 
+/* TÍTULO */
+.cta-titulo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* SUBTEXTO */
+.cta-sub {
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.cta-timeline {
+  position: relative;
+}
+
+/* LÍNEA HORIZONTAL SUTIL */
+.cta-timeline::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: #ddd;
+}
+
+/* =========================
+   ITEMS
+========================= */
+.cta-step {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* NÚMERO */
+.step-number {
+  font-size: 0.8rem;
+  color: #999;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* EMOJI */
+.emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* TÍTULO */
+.cta-step h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+
+/* TEXTO */
+.cta-step p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* HOVER SUAVE */
+.cta-step:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .cta-timeline::before {
+    display: none;
+  }
+}
 /* ================================================================
    MODAL
 ================================================================ */

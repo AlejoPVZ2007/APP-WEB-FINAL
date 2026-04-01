@@ -39,7 +39,7 @@ export class Nosotros {
       nombre:    'Alejandro Matamoro',
       rol:       'Diseñador UX/UI',
       bio:       'Crea experiencias intuitivas y accesibles. Responsable de la identidad visual de la plataforma.',
-      foto:      'assets/images/equipo/maria.jpg',
+      foto:      'assets/images/matamoro.jpeg',
       linkedin:  'https://linkedin.com',
       github:    '',
       instagram: '',

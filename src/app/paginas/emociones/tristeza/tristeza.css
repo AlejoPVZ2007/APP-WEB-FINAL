@@ -1,225 +1,431 @@
-/* ===================================================
-   BODY Y FONDO
-=================================================== */
-body {
-  background-color: #1c2a3a;
-  margin: 0;
-  padding: 0;
-  border-bottom: 2px solid #5dade2;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --tris-azul:      #2a4a7a;
+  --tris-azul-med:  #3a6aa0;
+  --tris-azul-lt:   #6a9ac8;
+  --tris-azul-glow: #a0c0e8;
+  --tris-negro:     #04060a;
+  --tris-carbon:    #080e18;
+  --tris-surface:   #0e1620;
+  --tris-surface2:  #121e2e;
+  --tris-borde:     #1a2e48;
+  --tris-texto:     #d0dcea;
+  --tris-texto-2:   #8aaac8;
+  --f-titulo:       'Playfair Display', Georgia, serif;
+  --f-cuerpo:       'DM Sans', sans-serif;
+  --t:              0.25s ease;
 }
 
-.tristeza-body {
-  background-color: #1c2a3a;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  padding: 0 0;
-  color: #dce3ea;
+* { box-sizing: border-box; }
+
+/* HERO */
+.tris-hero {
   position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.tris-hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.30) saturate(0.4);
+}
+.tris-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(8,14,24,0.97) 0%,
+    rgba(42,74,122,0.5) 50%,
+    rgba(8,14,24,0.45) 100%
+  );
   z-index: 1;
 }
+.tris-hero-content {
+  position: relative; z-index: 2;
+  max-width: 620px; padding: 4rem 0;
+}
+.tris-hero-titulo {
+  font-family: var(--f-titulo);
+  font-size: 4rem; font-weight: 700;
+  color: #d0dcea; line-height: 1.1;
+  margin: 1rem 0;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.9);
+}
+.tris-hero-sub {
+  font-size: 1.1rem; color: #8aaac8;
+  line-height: 1.75; margin-bottom: 2rem;
+  max-width: 500px;
+}
+.tris-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-/* ===================================================
-   CANVAS TRISTEZA
-=================================================== */
-.canvas-tristeza {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999;
-  pointer-events: none;
+.tris-btn-primary {
+  display: inline-block;
+  background: #3a6aa0; color: #d0dcea !important;
+  border: 2px solid #3a6aa0;
+  padding: 0.75rem 1.75rem; border-radius: 50px;
+  font-size: 0.92rem; font-weight: 700;
+  text-decoration: none !important;
+  transition: background var(--t), transform var(--t);
+}
+.tris-btn-primary:hover { background: #2a4a7a; transform: translateY(-2px); }
+
+.tris-btn-ghost {
+  display: inline-block;
+  background: transparent; color: #8aaac8 !important;
+  border: 2px solid #1a2e48;
+  padding: 0.75rem 1.75rem; border-radius: 50px;
+  font-size: 0.92rem; font-weight: 600;
+  text-decoration: none !important;
+  transition: background var(--t), color var(--t);
+}
+.tris-btn-ghost:hover { background: #121e2e; color: #d0dcea !important; }
+
+.tris-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: #6a9ac8; background: #0e1620;
+  border: 1px solid #1a2e48;
+  padding: 0.25rem 0.85rem; border-radius: 20px;
+  margin-bottom: 0.85rem;
+}
+.tris-eyebrow.claro { color: #080e18; background: #6a9ac8; border-color: #6a9ac8; }
+
+/* SECCIONES */
+.tris-seccion { padding: 5rem 0; background: #080e18; }
+.tris-dark {
+  background: #060a10;
+  border-top: 2px solid #1a2e48;
+  border-bottom: 2px solid #1a2e48;
+}
+.tris-titulo {
+  font-family: var(--f-titulo);
+  font-size: 2rem; font-weight: 700;
+  color: #6a9ac8; margin-bottom: 0.6rem; line-height: 1.2;
+}
+.tris-titulo.claro { color: #d0dcea; }
+.tris-subtitulo { font-size: 1rem; color: #8aaac8; line-height: 1.7; }
+.tris-texto { font-size: 0.98rem; color: #8aaac8; line-height: 1.8; margin-bottom: 1rem; }
+.tris-texto strong { color: #6a9ac8; font-weight: 600; }
+
+.tris-stats { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+.tris-stat { display: flex; flex-direction: column; }
+.tris-stat-n {
+  font-family: var(--f-titulo);
+  font-size: 2rem; font-weight: 700;
+  color: #3a6aa0; line-height: 1;
+}
+.tris-stat-l {
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: #4a6a88; margin-top: 0.2rem;
 }
 
-/* ===================================================
-   SECCIÓN INICIO
-=================================================== */
-#textoInicioTristeza {
-  background-color: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(4px);
-  border-radius: 12px;
-  padding: 20px 30px;
-  color: #e6edf5;
+.tris-def-img-wrap {
+  position: relative; border-radius: 20px;
+  overflow: hidden; border: 2px solid #1a2e48;
+}
+.tris-def-img {
+  width: 100%; height: 600px;
+  object-fit: cover; object-position: center;
+  display: block; filter: brightness(0.75) saturate(0.5);
+}
+.tris-def-badge {
+  position: absolute; bottom: 16px; right: 16px;
+  font-size: 2.5rem; background: #080e18;
+  border: 2px solid #3a6aa0; border-radius: 50%;
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
 }
 
-/* ===================================================
-   TEXTO DESCRIPCIÓN
-=================================================== */
-#textoDescripcionTristeza p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: #aab7c4;
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  letter-spacing: 0.3px;
-  border-left: 3px solid #5dade2;
-  padding-left: 15px;
+/* CARDS */
+.tris-card {
+  background: #0e1620; border: 2px solid #1a2e48;
+  border-radius: 16px; padding: 1.75rem; height: 100%;
+  transition: border-color var(--t), transform var(--t);
+}
+.tris-card:hover { border-color: #3a6aa0; transform: translateY(-5px); }
+.tris-card-icono { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.tris-card-titulo {
+  font-family: var(--f-titulo); font-size: 1.05rem;
+  font-weight: 700; color: #6a9ac8; margin-bottom: 0.6rem;
+}
+.tris-card-texto { font-size: 0.88rem; color: #8aaac8; line-height: 1.65; margin: 0; }
+
+/* PASOS */
+.tris-pasos { display: flex; flex-direction: column; gap: 1.25rem; max-width: 800px; margin: 0 auto; }
+.tris-paso {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  background: #0e1620; border: 2px solid #1a2e48;
+  border-radius: 16px; padding: 1.5rem;
+  transition: border-color var(--t), transform var(--t);
+}
+.tris-paso:hover { border-color: #3a6aa0; transform: translateX(6px); }
+.tris-paso-num {
+  font-family: var(--f-titulo); font-size: 1.8rem;
+  font-weight: 700; color: #3a6aa0; line-height: 1; min-width: 40px;
+}
+.tris-paso-titulo {
+  font-family: var(--f-titulo); font-size: 1.05rem;
+  font-weight: 700; color: #6a9ac8; margin-bottom: 0.4rem;
+}
+.tris-paso-texto { font-size: 0.9rem; color: #8aaac8; line-height: 1.65; margin: 0; }
+
+/* BENEFICIOS */
+.tris-ben {
+  background: #0e1620; border: 2px solid #1a2e48;
+  border-radius: 16px; padding: 1.75rem 1.5rem;
+  height: 100%; text-align: center;
+  transition: border-color var(--t), transform var(--t);
+}
+.tris-ben:hover { border-color: #6a9ac8; transform: translateY(-5px); }
+.tris-ben-icono { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+.tris-ben-titulo {
+  font-family: var(--f-titulo); font-size: 1rem;
+  font-weight: 700; color: #6a9ac8; margin-bottom: 0.5rem;
+}
+.tris-ben-texto { font-size: 0.85rem; color: #8aaac8; line-height: 1.6; margin: 0; }
+
+/* CITAS */
+.tris-citas {
+  background: linear-gradient(135deg, #04060a 0%, #0e1a2e 50%, #04060a 100%);
+  border-top: 2px solid #1a2e48; border-bottom: 2px solid #1a2e48;
+}
+.tris-cita-card {
+  background: rgba(14,22,32,0.85); border: 2px solid #1a2e48;
+  border-top: 3px solid #3a6aa0; border-radius: 16px;
+  padding: 2rem 1.75rem; height: 100%;
+  transition: border-color var(--t), transform var(--t);
+}
+.tris-cita-card:hover { border-color: #6a9ac8; transform: translateY(-4px); }
+.tris-comilla {
+  font-family: var(--f-titulo); font-size: 4rem;
+  color: #3a6aa0; line-height: 0.5;
+  display: block; margin-bottom: 1rem;
+}
+.tris-cita-texto {
+  font-family: var(--f-titulo); font-size: 1rem;
+  font-style: italic; color: #a0bcd8; line-height: 1.7; margin-bottom: 1rem;
+}
+.tris-cita-autor { font-size: 0.82rem; font-weight: 600; color: #6a9ac8; }
+
+/* ACTIVIDADES */
+.tris-actividad {
+  background: #0e1620; border: 2px solid #1a2e48;
+  border-radius: 16px; padding: 1.75rem; height: 100%;
+  transition: border-color var(--t), transform var(--t);
+}
+.tris-actividad:hover { border-color: #3a6aa0; transform: translateY(-4px); }
+.tris-act-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.tris-act-icono { font-size: 1.8rem; }
+.tris-act-titulo {
+  font-family: var(--f-titulo); font-size: 1.05rem;
+  font-weight: 700; color: #6a9ac8; margin: 0;
+}
+.tris-act-texto { font-size: 0.88rem; color: #8aaac8; line-height: 1.65; margin-bottom: 0.75rem; }
+.tris-act-tiempo {
+  display: inline-block; font-size: 0.75rem; font-weight: 600;
+  color: #3a6aa0; background: #060a10;
+  border: 1px solid #1a2e48; padding: 0.2rem 0.65rem; border-radius: 20px;
+}
+
+/* CTA */
+.tris-cta {
+  background: linear-gradient(135deg, #04060a 0%, #0e1a2e 100%);
+  border-top: 2px solid #3a6aa0; padding: 5rem 0;
+}
+.tris-cta-titulo {
+  font-family: var(--f-titulo); font-size: 2.2rem;
+  font-weight: 700; color: #d0dcea; margin-bottom: 0.75rem;
+}
+.tris-cta-sub { font-size: 1rem; color: #8aaac8; margin-bottom: 2rem; line-height: 1.7; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tris-hero-titulo { font-size: 2.5rem; }
+  .tris-titulo      { font-size: 1.6rem; }
+  .tris-cta-titulo  { font-size: 1.6rem; }
+  .tris-def-img     { height: 260px; }
+  .tris-paso        { flex-direction: column; gap: 0.75rem; }
+}
+
+/* ================================================================
+   COMENTARIOS
+================================================================ */
+.com-resumen {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.com-promedio {
+  background: #0e1620;
+  border: 2px solid #1a2e48;
+  border-radius: 16px;
+  padding: 1.5rem 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.com-promedio-num {
+  font-family: var(--f-titulo);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6a9ac8;
+  line-height: 1;
+}
+.com-total { font-size: 0.82rem; color: #8aaac8; }
+
+/* Estrellas display */
+.com-estrellas-display { display: flex; gap: 2px; }
+.com-estrella-icon {
+  font-size: 1.2rem;
+  color: #1a2e48;
+  transition: color 0.15s;
+}
+.com-estrella-icon.activa { color: #3a6aa0; }
+.com-est-sm .com-estrella-icon { font-size: 0.9rem; }
+
+/* Formulario */
+.com-form {
+  background: #0e1620;
+  border: 2px solid #1a2e48;
+  border-radius: 20px;
+  padding: 2rem;
+}
+.com-form-titulo {
+  font-family: var(--f-titulo);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6a9ac8;
   margin-bottom: 1.5rem;
 }
-
-/* ===================================================
-   IMAGEN TRISTEZA
-=================================================== */
-.img-tristeza {
-  animation: pulsoTristeza 3s ease-in-out infinite;
-  filter: grayscale(40%) brightness(0.85);
+.com-exito {
+  background: #0a1a28;
+  border: 1px solid #1a4a6a;
+  border-radius: 10px;
+  color: #6aaacf;
+  font-size: 0.88rem;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1.25rem;
 }
-
-@keyframes pulsoTristeza {
-  0% {
-    transform: scale(1);
-    filter: grayscale(40%) brightness(0.85);
-  }
-  50% {
-    transform: scale(1.02);
-    filter: grayscale(60%) brightness(0.75);
-  }
-  100% {
-    transform: scale(1);
-    filter: grayscale(40%) brightness(0.85);
-  }
+.com-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
+.com-label { font-size: 0.82rem; font-weight: 600; color: #8aaac8; }
+.com-input {
+  background: #060a10;
+  border: 1.5px solid #1a2e48;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  color: #d0dcea;
+  font-size: 0.92rem;
+  font-family: var(--f-cuerpo);
+  outline: none;
+  width: 100%;
+  resize: none;
+  transition: border-color 0.25s;
 }
+.com-input:focus { border-color: #3a6aa0; }
+.com-input::placeholder { color: #2a4a68; }
+.com-textarea { min-height: 110px; }
 
-/* ===================================================
-   TARJETAS GENERALES
-=================================================== */
-.card {
-  background-color: #2c3e50;
-  border: 1px solid #3e556e;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 1;
-  border-bottom: 2px solid #5dade2;
-}
-
-.card-body {
-  padding: 15px;
-  color: #d6dee6;
-}
-
-.card-text {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-/* ===================================================
-   FONDO COMENTARIOS
-=================================================== */
-#fondocomentariosTristeza {
-  background-color: #243447;
-  padding: 0;
-  border-top: 2px solid #5dade2;
-  border-bottom: 2px solid #5dade2;
-}
-
-#fondocomentariosTristeza .container {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-#fondocomentariosTristeza .btn {
-  display: block;
-  margin: 10px 0;
-  width: fit-content;
-  padding: 6px 30px;
-}
-
-/* ===================================================
-   FONDO FRASES
-=================================================== */
-#fondofrasesTristeza {
-  background-color: #243447;
-  padding: 0;
-  border-top: 2px solid #5dade2;
-}
-
-#frasesTristeza .card {
-  background-color: #34495e !important;
-  border: none !important;
-  min-height: 220px;
-  height: auto;
-  transition:
-    background-color 0.4s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease !important;
-}
-
-#frasesTristeza .card:hover {
-  background-color: #5dade2 !important;
-  transform: translateY(-5px) !important;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4) !important;
-  border-bottom: 2px solid #5dade2;
-}
-
-#frasesTristeza .card .card-text {
-  color: #cfd8e3 !important;
-  font-size: 18px;
-  line-height: 1.6;
-  transition: color 0.4s ease !important;
-}
-
-#frasesTristeza .card:hover .card-text {
-  color: #ffffff !important;
-  border-bottom: 2px solid #5dade2;
-}
-
-/* ===================================================
-   BOTONES
-=================================================== */
-button {
-  padding: 10px 20px;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  background-color: #5dade2;
-  transition: background-color 0.3s;
-  margin-top: 10px;
-}
-
-button:hover {
-  background-color: #3498db;
-}
-
-/* ===================================================
-   RESPONSIVE
-=================================================== */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1.1rem;
-  }
-}
-
-/*
-ESTILO DE AUDI TRISTEZA
-*/
-.control-volumen-tristeza {
-  margin-top: 15px;
-  text-align: center;
-  color: #dce3ea;
-}
-
-.control-volumen-tristeza label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.control-volumen-tristeza input[type='range'] {
-  width: 200px;
-  accent-color: #5dade2; /* azul suave */
+/* Selector de estrellas */
+.com-estrellas-select { display: flex; gap: 4px; }
+.com-estrella {
+  font-size: 1.8rem;
+  color: #1a2e48;
   cursor: pointer;
+  transition: color 0.15s, transform 0.15s;
+  user-select: none;
+}
+.com-estrella.activa { color: #3a6aa0; }
+.com-estrella:hover  { transform: scale(1.2); }
+
+.com-btn {
+  background: #3a6aa0;
+  color: #ffffff;
+  border: 2px solid #3a6aa0;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-family: var(--f-cuerpo);
+  cursor: pointer;
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+.com-btn:hover:not(:disabled) {
+  background: #060a10;
+  color: #a0c0e8;
+  transform: translateY(-2px);
+}
+.com-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.com-spinner {
+  width: 18px; height: 18px;
+  border: 2px solid #d0dcea;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
 }
 
-.control-volumen-tristeza small {
-  display: block;
-  margin-top: 5px;
-  color: #aab7c4;
+/* Lista de comentarios */
+.com-lista { display: flex; flex-direction: column; gap: 1rem; }
+.com-item {
+  display: flex;
+  gap: 1rem;
+  background: #0e1620;
+  border: 1.5px solid #1a2e48;
+  border-radius: 14px;
+  padding: 1.25rem;
+  transition: border-color 0.25s;
+}
+.com-item:hover { border-color: #3a6aa0; }
+
+.com-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #3a6aa0;
+  color: #ffffff;
+  font-family: var(--f-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.com-contenido { flex: 1; }
+.com-cabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.com-nombre { font-size: 0.92rem; font-weight: 600; color: #a0bcd8; }
+.com-fecha  { font-size: 0.75rem; color: #4a6a88; }
+.com-texto  { font-size: 0.88rem; color: #8aaac8; line-height: 1.6; margin: 0.4rem 0 0; }
+
+/* Vacío */
+.com-vacio {
+  text-align: center;
+  padding: 3rem;
+  color: #4a6a88;
+  font-size: 0.95rem;
+}
+.com-vacio-icono { font-size: 3rem; display: block; margin-bottom: 1rem; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

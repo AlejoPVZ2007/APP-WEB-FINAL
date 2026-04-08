@@ -85,6 +85,27 @@
           </svg>
         </button>
       </form>
+
+      <!-- PERFIL -->
+      <div class="perfil-wrap">
+        <button class="perfil-btn" (click)="togglePerfil()" aria-label="Perfil">
+          <div class="perfil-avatar">👤</div>
+        </button>
+
+        <div class="perfil-dropdown" [class.abierto]="perfilAbierto">
+          <div class="perfil-header">
+            <div class="perfil-avatar-lg">👤</div>
+            <div>
+              <p class="perfil-nombre">Mi perfil</p>
+              <p class="perfil-email">{{ userEmail }}</p>
+            </div>
+          </div>
+          <div class="perfil-sep"></div>
+          <button class="perfil-opcion" (click)="cerrarSesion()">
+            🚪 Cerrar sesión
+          </button>
+        </div>
+      </div>
     </div>
 
   </div>

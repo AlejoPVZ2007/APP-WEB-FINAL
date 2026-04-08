@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { Login } from './paginas/login/login';
 import { Principal } from './paginas/principal/principal';
 import { Nosotros } from './paginas/nosotros/nosotros';
 
@@ -15,7 +16,9 @@ import { Confianza } from './paginas/emociones/confianza/confianza';
 import { Enojo } from './paginas/emociones/enojo/enojo';
 
 export const routes: Routes = [
-  { path: '', component: Principal },
+
+  { path: '', component: Login },
+  { path: 'principal', component: Principal },
   { path: 'nosotros', component: Nosotros },
   { path: 'emociones/alegria', component: Alegria },
   { path: 'emociones/nostalgia', component: Nostalgia },
